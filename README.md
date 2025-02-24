@@ -1,6 +1,10 @@
 # what-is-machine-learning
 
-recherches, documentées, illustrées et sourcées des éléments suivants :
+Recherches, documentées, illustrées et sourcées des éléments suivants :
+
+Définition des éléments de
+veille ci-dessous.
+Cette documentation se fera sous la forme de votre choix (Markdown, document PDF)
 
 - A. La science des données
 - B. L’apprentissage automatique et/ou l’apprentissage profond
@@ -14,3 +18,8 @@ recherches, documentées, illustrées et sourcées des éléments suivants :
 - J. Corrélation linéaire (de Pearson) entre deux variables
 - K. Une fonction de coût
 - L. La descente de gradient
+
+
+contexte du projet :
+
+
