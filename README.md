@@ -45,17 +45,76 @@ A permis des progrès importants et rapides :
 
 Le développement de l'apprentissage profond à été rendu possible par des investissements privés et publics importants, notamment de la part des GAFAM, durant les années 2000.
 
+## Apprentissage supervisé
+Les données d'entrainement fournies à l'algorithme comportent des **étiquettes** qui indiquent le résultat voulu.
+L'objectif de l'algorithme est d'apprendre à faire correspondre les entrées aux sorties afin de pouvoir prédire l'étiquette correcte pour de nouvelles données jamais vues.
 
-## C. L’apprentissage supervisé,
-## D. L’apprentissage non supervisé,
-## E. La classification supervisée
-## F. La classification non supervisée
-## G. La régression
-## H. La validation croisée
-## I. Les données d’entraînement, les données de test et/ ou de validation
-## J. Corrélation linéaire (de Pearson) entre deux variables
-## K. Une fonction de coût
-## L. La descente de gradient
+![apprentissage supervisé](img/apprentissage_supervise.png)
+
+## Apprentissage non supervisé
+Les données d'entrainement ne comportent **pas d'étiquettes**.
+L'algorithme n'a donc pas d'informations sur le résultat attendu.
+Il explore les données pour y découvrir des structures, des motifs ou des relations cachées sans qu'une sortie spécifique ne lui soit fournie.
+Il tente d'organiser les données selon leurs similarités ou différences.
+
+|                 | Apprentissage supervisé            | Apprentissage non supervisé           |
+|-----------------------|------------------------------------|--------------------------------------|
+| Données               | Étiquetées                         | Non étiquetées                      |
+| Objectif              | Prédire une sortie                 | Découvrir des structures            |
+| Types de problèmes    | Classification, régression         | Clustering, réduction de dimensionnalité |
+| Exemples typiques     | Détection de spam, prévision des ventes | Segmentation de clients, détection d'anomalies |
+
+## Classification / Régression
+En apprentissage automatique, on distingue les problèmes de régression des problèmes de classification.
+ 
+**Classification** : prédiction d'une variable qualitative
+**Regression** : prédiction d'une variable quantitative.
+
+## Classification supervisée
+
+1. **On dispose d'articles déjà classés en rubrique :**
+économie, politique, sport, culture...
+
+2. **On veut classer un nouvel article, lui attribuer une étiquette** 
+
+![Classification supervisée](img/classification_supervise.png)
+
+Définition des règles permettant de classer des objets dans des classes.
+
+Ces règles se basent sur des variables qualitatives ou quantitatives des
+objets à classer.
+
+Les méthodes s'étendent souvent à des variables Y quantitatives (régression).
+
+Un échantillon dont le classement est connu est utilisé pour l'apprentissage des règles de classement.
+
+Il faut ensuite étudier la fiabilité de ces règles pour les comparer et les appliquer.
+Evaluer les cas de sous apprentissage ou de sur apprentissage (complexité du modèle). 
+
+On utilise souvent un deuxième échantillon indépendant, dit de validation ou de test.
+
+https://math.univ-angers.fr/~labatte/enseignement%20UFR/master%20MIM/classificationsupervisee.pdf
+
+
+## Classification non supervisée
+1. **On dispose d'éléments non classés :**
+mots d'un texte
+![Classification non supervisée](img/classification_non_supervise1.png)
+2. **On veut les regrouper en classes :**
+si deux mots ont la même étiquette, ils sont en rapport avec une
+même thématique...
+![Classification non supervisée 2](img/classification_non_supervise2.png)
+![Classification non supervisée3](img/classification_non_supervise3.png)
+
+## Régression
+
+En mathématiques, la régression recouvre plusieurs méthodes d’analyse statistique permettant d’approcher une variable à partir d’autres qui lui sont corrélées.
+
+## Validation croisée
+## Données d’entraînement, les données de test et/ ou de validation
+## Corrélation linéaire (de Pearson) entre deux variables
+## Fonction de coût
+## Descente de gradient
 
 
 contexte du projet :
