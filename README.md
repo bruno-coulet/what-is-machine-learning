@@ -1,10 +1,10 @@
 # what-is-machine-learning
 
-Recherches, documentées, illustrées et sourcées des éléments suivants :
+## Contexte du projet :
+Travail personnel de recherches et de documentation pour la définition des éléments suivants :
 
-Définition des éléments de
-veille ci-dessous.
-Cette documentation se fera sous la forme de votre choix (Markdown, document PDF)
+
+illustrés et sourcés
 
 ## A. La science des données
 ![data_science](img/dataScience.png)
@@ -34,7 +34,7 @@ L'art de programmer des ordinateurs de sorte qu'ils puissent apprendre à partir
 On considère qu'un ordinateur "apprend" s'il améliore sa **performance** lors de l'exécution d'une **tâche** au fur et à mesure de son **expérience**.
 
 ##  Apprentissage profond
-![deep learning](img/deepLearning.png)
+![deep learning](img/deep_learning.png)
 Procédé d’apprentissage automatique utilisant des [réseaux de neurones](reseaux_neurone.md) composé de nombreuses couches cachées et des algorithmes avec de très nombreux paramètres.
 Ce procédé requière une grande quantité de données afin d’être entraîné.
 ![resaue de neurones](img/reseauNeurones.png)
@@ -66,11 +66,18 @@ Il tente d'organiser les données selon leurs similarités ou différences.
 
 ## Classification / Régression
 En apprentissage automatique, on distingue les problèmes de régression des problèmes de classification.
+
+**En règle général :**
  
-**Classification** : prédiction d'une variable qualitative
-**Regression** : prédiction d'une variable quantitative.
+ |Classification|Regression|
+ |--------------|----------|
+ | prédiction d'une **variable qualitative**| prédiction d'une **variable quantitative**|
+
+
 
 ## Classification supervisée
+
+La classification supervisée est une tâche d’apprentissage supervisé où le modèle apprend à attribuer des catégories ou des labels à de nouvelles données en se basant sur des exemples d’entraînement étiquetés. Par exemple, classer des emails comme spam ou non-spam.
 
 1. **On dispose d'articles déjà classés en rubrique :**
 économie, politique, sport, culture...
@@ -111,12 +118,106 @@ même thématique...
 En mathématiques, la régression recouvre plusieurs méthodes d’analyse statistique permettant d’approcher une variable à partir d’autres qui lui sont corrélées.
 
 ## Validation croisée
+Dans un projet de Machine Learnig, il faut séparer les données :
+
+1. un jeux de données pour **entrainer** le modèle 
+2. un jeux de données pour **tester** le modèle entrainé
+3. un dernier jeux pour **valider** le modèle sur de nouvelles données
+
+**<font color="orange">La validation croisée</font>** consiste en l'utilisation alternative et conjointe des jeux d'entrainement et de test.
+
+**<font color="orange">La validation croisée</font>** se compose de plusieurs étapes :
+1. division du jeux de donné en K sous-ensembles
+2. entrainement puis évaluation du modèle K fois
+    - en changeant de combinaison jeux d'entrainement / jeux d'évaluation à chaque itération
+3. compare les résultats
+
+Ainsi, toutes les tranches de donnée sont alternativement réservèes aux test.
+Au final, toutes les données ont servies à l'entrainement et au test.
+Cela permet d'obtenir une estimation plus stable des performances.
+
+
+### Validation croisée en images
+
+les k-1 premières tranches sont utilisé pour l'entrainement
+![train_4](img/cross_validation_train_4.png)
+la tranche k est utiliée pour le test
+![test_4](img/cross_validation_test_4.png)
+on note les résultats
+![track_4](img/cross_validation_track_4.png)
+puis c'est la tranche k-1 qui est réservée pour le test, on note les résultats
+![track_3](img/cross_validation_track_3.png)
+
+Et ainsi de suite pour chaque tranches jusquà la 1ère tranche
+![](img/cross_validation_test2-.png)
+ puis on compile les résultats.
+
+L'idéal étant de faire une **validation croisée avec différent modèles** afin de les comparer :
+- Logistic regression
+- support vector machines
+- k-nearest neighbors
+- etc...
+![track_2](img/cross_validation_comparaison.png)
+
 ## Données d’entraînement, les données de test et/ ou de validation
+Dans un projet de Machine Learnig, il faut séparer les données :
+
+1. un jeux de données d'**entrainement** pour ajuster le modèle aux données. **apprendre à partir des données.**
+2. un jeux de données de **test** pour évaluer les performances du modèle entrainé. **évaluer la qualité de l'apprentissage.**
+3. un dernier jeux de **validation** pour optimiser le modèle et prévenir le surajustement.  **affiner et optimiser le modèle.**
+   (avec de nouvelles données)
+ 
+Ces trois étapes – entraînement, test et validation – sont essentielles pour garantir que le modèle est fiable et performant avant son déploiement.
+
+
+
+### Entrainement
+
+Après les phase de collecte, de nettoyage et de préparation des données :
+- recherche de correlations entre les variables
+- gestion des variables quantitative (stratification, normalisation, ...)
+- gestion des variables qualitative (encodage, onehot encoding, ...)
+- combinaison de variables (création de nouvelles caractéristiques, feature engineering).
+
+Vient la phase de l'**entrainement du modèle**.
+supervisé ou non supervisé selon que les données contiennent ou non des étiquettes (labels)
+Il permet d'ajuster le modèle choisi aux données dans le but de faire des prédictions ou de la classification sur de nouvelles données
+
+**Problématique :**
+
+**- Surajustement** (overfitting) : le modèle apprend trop bien les détails et le bruit des données d'entraînement, ce qui nuit à sa capacité à généraliser.
+**- Sous-ajustement** (underfitting) : le modèle est trop simple et ne capte pas la structure sous-jacente des données.
+
+### test
+La phase de test consiste à évaluer les performances du modèle sur un ensemble de données qui n'a pas été utilisé pendant l'entraînement.
+Cela permet d'obtenir une estimation objective de la capacité du modèle à généraliser ses prédictions sur des données inconnues.
+
+**Évaluation des performances :**
+On compare les prédictions du modèle avec les valeurs du jeu de test.
+
+**Métriques courantes pour évaluer les performances :**
+- Précision (Accuracy) : proportion de prédictions correctes.
+- Rappel (Recall) : capacité du modèle à identifier les éléments positifs.
+- F1-score : moyenne harmonique entre la précision et le rappel.
+- Erreur quadratique moyenne (MSE) : utilisée pour les modèles de régression.
+
+**Importance du test :**
+- Identifier les biais et faiblesses du modèle 
+- Vérifier sa capacité à généraliser.
+
+### validation
+Après l'entraînement et le test, la validation est une étape cruciale.
+Elle vise à affiner le modèle et à s'assurer qu'il fonctionne correctement dans des conditions réelles.
+
+- Optimisation des hyperparamètres du modèle pour améliorer ses performances.
+- détecter d'éventuels problèmes
+- Détecter le surajustement : un modèle trop complexe mémorise les données au lieu d'apprendre leurs tendances.
+- Détecter le sous-ajustement : un modèle trop simple passe à côté des structures importantes.
+- Optimiser les performances : tester différentes configurations pour maximiser les résultats.
+- Généralisation : le jeu de validation permet d'estimer comment le modèle se comportera sur des données réelles et non vues auparavant.
+
+
+
 ## Corrélation linéaire (de Pearson) entre deux variables
 ## Fonction de coût
 ## Descente de gradient
-
-
-contexte du projet :
-
-
