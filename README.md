@@ -1,15 +1,9 @@
 # what-is-machine-learning
 
-## Contexte du projet :
+## Contexte du projet
 Travail personnel de recherches et de documentation pour la définition des éléments suivants :
 
-
-illustrés et sourcés
-
-
-
-## Index
-
+<!-- - [Sources](#sources) -->
 1. [Science des données](#science-des-données)
 2. [Apprentissage automatique ](#apprentissage-automatique)
 3. [Apprentissage supervisé](#apprentissage-supervisé)
@@ -24,18 +18,41 @@ illustrés et sourcés
 12. [Descente de gradient](#descente-de-gradient)
 
 
-## A. La science des données
-Ou comment générer du sens à partir de données.
-![data_science](img/dataScience.png)
+## Sources
+<div class="encadre">
+
+   - Machine learning avec Scikit-Learn
+   de Aurélien Géron aux editions Dunod O'reilly
+   2017
+   - Machine learning : les fondamentaux : exploiter des données structurées en Python
+   de Harrison Matt aux éditions O'Reilly Media
+   2020
+   - [StatQuest](https://statquest.org/video-index/) et sa [chaîne youtube](https://www.youtube.com/watch?v=fSytzGwwBVw&list=PLblh5JKOoLUICTaGLRoHQDuF_7q2GfuJF&index=3)
+   - [Datatab.fr](https://datatab.fr/tutorial/regression)
+   - math.univ-angers.fr/labatte/enseignement/master/classificationsupervisee.pdf
+   - [IBM](https://www.ibm.com/fr-fr/topics/machine-learning)
+   - [CNIL](https://www.cnil.fr/fr/definition/apprentissage-automatique)
+   - [wikipedia](https://fr.wikipedia.org/wiki/Apprentissage_automatique)
+
+</div>
+
+## Science des données
+Ou comment générer du sens à partir de données - *Faire parler les données*.
+<p align="center">
+<img src="img/dataScience.png" alt="data_science">
+</p>
 Considérée comme un nom alternatif pour les statistiques dans les années 60, la science des données devient une discipline issue de l'informatique à la fin des années 90.
-Elle s'articule autour de : 
-- La conception.
-- La collecte.
-- L'analyse de données.
+<br>
+Elle s'articule autour de la donnée :
+
+- conception.
+- collecte.
+- analyse.
 
 L'objet de cette science est l'étude et l'analyse des données afin d'en extraire des informations pertinentes pour les entreprises.
 
-Elle adopte une approche pluridisciplinaire, mêlant des concepts et des méthodes issus des mathématiques, des statistiques, de l'intelligence artificielle et de l'informatique.
+Elle adopte une approche pluridisciplinaire, mêlant des concepts et des méthodes issus des **mathématiques**, des **statistiques**, de l'**intelligence artificielle** et de l'**informatique**.
+
 L'objectif est d'examiner de vastes ensembles de données pour répondre à des questions clés telles que :
 - Que s'est-il passé ?
 - Pourquoi cela s'est-il produit ?
@@ -51,24 +68,21 @@ exploration, transformation, corrélation...
 machine learning, la prédiction, la comparaison de modèles et la modélisation prédictive.
 4. **Analyse prescriptive**
 suite logique et proactive de l'analyse prédictive
-
-
-[Retour à l'index](#index)
-
+<br>
+[Retour à l'index](#contexte-du-projet)
+<br>
 ## Apprentissage automatique
 L'art de programmer des ordinateurs de sorte qu'ils puissent apprendre à partir de données
 
 On considère qu'un ordinateur "apprend" s'il améliore sa **[performance](#fonction-de-coût)** lors de l'exécution d'une **tâche** au fur et à mesure de son **expérience**.
 
 Il existe 2 grandes familles d'apprentissage automatique :
-### La classification
-prédire une catégorie ou une étiquette à partir des caractéristiques des données d'entrée.
-
+#### La classification - prédire des classes
+Prédire une catégorie ou une étiquette à partir des caractéristiques des données d'entrée.
 **exemple :**  filtre de spam à partir d'e-mail accompagnés de leur classe (normal/spam) 
 
-### La prédiction
-prédit une valeur numérique **cible (target)** à partir des valeurs **caractéristiques(feature)** d'attributs ou de variables d'une observation
-
+#### La régression - prédire des valeurs
+Prédit une valeur numérique **cible (target)** à partir des valeurs **caractéristiques(feature)** d'attributs ou de variables d'une observation
 **exemple :** prédire le prix d'une voiture en fonction de son age, de son kilométrage, etc...
 
 ### Terminologie :
@@ -79,31 +93,45 @@ prédit une valeur numérique **cible (target)** à partir des valeurs **caract�
 **variable à expliquer :** étiquette
 **attribut :** type de donnée (ex: kilométrage)
 
-[Retour à l'index](#index)
-<br>
+
+[Retour à l'index](#contexte-du-projet)
+
 
 ##  Apprentissage profond
-![deep learning](img/deep_learning.png)
+<p align="center">
+   <img src ="img/deep_learning.png" alt ="deep learning">
+</p>
 Procédé d’apprentissage automatique utilisant des [réseaux de neurones](reseaux_neurone.md) composé de nombreuses couches cachées et des algorithmes avec de très nombreux paramètres.
 Ce procédé requière une grande quantité de données afin d’être entraîné.
-![resaue de neurones](img/reseauNeurones.png)
+
+<p align="center">
+  <img src="img/reseauNeurones.png" alt="reseau de neurones">
+</p>
+
 A permis des progrès importants et rapides :
 - analyse du signal sonore, reconnaissance faciale
 - analyse du signal visuel, reconnaissance vocale
 - le traitement automatisé du langage
 
 Le développement de l'apprentissage profond à été rendu possible par des investissements privés et publics importants, notamment de la part des GAFAM, durant les années 2000.
-
-[Retour à l'index](#index)
+<br>
+[Retour à l'index](#contexte-du-projet)
 <br>
 
 ## Apprentissage supervisé
 Les données d'entrainement fournies à l'algorithme comportent des **étiquettes** qui indiquent le résultat voulu.
+Les données sont caractérisé par des variable x (**features**), et annoté d'une variable y (**label/target**)
+<p align="center">
+  <img src="img/etiquette.png" alt="étiquette">
+</p>
+
 L'objectif de l'algorithme est d'apprendre à faire correspondre les entrées aux sorties afin de pouvoir prédire l'étiquette correcte pour de nouvelles données jamais vues.
+<p align="center">
+  <img src="img/apprentissage_supervise.png" alt="apprantissage supervisé">
+</p>
 
-![apprentissage supervisé](img/apprentissage_supervise.png)
 
-[Retour à l'index](#index)
+[Retour à l'index](#contexte-du-projet)
 
 
 ## Apprentissage non supervisé
@@ -120,8 +148,9 @@ Il tente d'organiser les données selon leurs similarités ou différences.
 | Exemples typiques     | Détection de spam, prévision des ventes | Segmentation de clients, détection d'anomalies |
 
 
-[Retour à l'index](#index)
 
+[Retour à l'index](#contexte-du-projet)
+<br>
 ## Classification / Régression
 En apprentissage automatique, on distingue les problèmes de régression des problèmes de classification.
 
@@ -129,7 +158,7 @@ En apprentissage automatique, on distingue les problèmes de régression des pro
  
  |Classification|Regression|
  |--------------|----------|
- | prédiction d'une **variable qualitative**| prédiction d'une **variable quantitative**|
+ | prédiction d'une variable  **qualitative/discrète**| prédiction d'une variable **quantitative/continue**|
 
 
 
@@ -139,10 +168,12 @@ La classification supervisée est une tâche d’apprentissage supervisé où le
 
 1. **On dispose d'articles déjà classés en rubrique :**
 économie, politique, sport, culture...
+<p align="center">
+  <img src="img/classification_supervise.png" alt="classification supervisée">
+</p>
 
 2. **On veut classer un nouvel article, lui attribuer une étiquette** 
 
-![Classification supervisée](img/classification_supervise.png)
 
 Définition des règles permettant de classer des objets dans des classes.
 
@@ -157,38 +188,70 @@ Il faut ensuite étudier la fiabilité de ces règles pour les comparer et les a
 Evaluer les cas de sous apprentissage ou de sur apprentissage (complexité du modèle). 
 
 On utilise souvent un deuxième échantillon indépendant, dit de validation ou de test.
-
-https://math.univ-angers.fr/~labatte/enseignement%20UFR/master%20MIM/classificationsupervisee.pdf
-
-
-
-[Retour à l'index](#index)
-
+<br>
+[Retour à l'index](#contexte-du-projet)
+<br>
 ## Classification non supervisée
-1. **On dispose d'éléments non classés :**
-mots d'un texte
-![Classification non supervisée](img/classification_non_supervise1.png)
-2. **On veut les regrouper en classes :**
-si deux mots ont la même étiquette, ils sont en rapport avec une
-même thématique...
-![Classification non supervisée 2](img/classification_non_supervise2.png)
-![Classification non supervisée3](img/classification_non_supervise3.png)
 
+La classification non supervisée est une technique d'apprentissage automatique utilisée lorsque les données ne sont pas accompagnées de labels ou d'étiquettes préexistantes.
+L'objectif est d'**identifier des structures** cachées **ou des regroupements naturels** dans les données.
 
-[Retour à l'index](#index)
+1. On dispose d'**éléments non classés**
+   les mots d'un texte ou les clients d'un site e-commerce sans information préalable sur leurs catégories.
+<br>
+2. On cherche à les **regrouper en classes en se basant sur leurs similitudes**
+  par exemple :
+    - les mots ayant des contextes d'utilisation proches
+    - les clients ayant des comportements d'achat similaires.
+<br>
+3. Si l'algorithme attribue la même étiquette à plusieurs éléments.
+   Ils sont supposés être en rapport avec une même thématique ou un même comportement, formant ainsi des clusters (groupes).
 
+| 1 | 2 | 3 |
+|--------|---------------|----------------|
+|![Classification non supervisée](img/classification_non_supervise1.png)|![Classification non supervisée 2](img/classification_non_supervise2.png)|![Classification non supervisée3](img/classification_non_supervise3.png)|
+
+**Exemples courants :**
+- Regrouper des articles de presse selon leurs sujets (politique, sport, technologie...).
+- Segmenter une clientèle selon ses habitudes d'achat pour du marketing ciblé.
+<br>
+[Retour à l'index](#contexte-du-projet)
+<br>
 ## Régression
 
 En mathématiques, la régression recouvre plusieurs méthodes d’analyse statistique permettant d’approcher une variable à partir d’autres qui lui sont corrélées.
 
-#### Régression linéaire
-méthode simple qui modélise la relation entre une variable dépendante et une ou plusieurs variables indépendantes par une droite.
+#### Régression linéaire  {#regression-lineaire}
+méthode simple qui modélise la relation entre une variable dépendante (en sortie) et une ou plusieurs variables indépendantes (en entrée) par une droite.
+
+**prédiction =  somme pondérée des variables d'entrée plus une constante**
+c'est à dire :
+|forme scalaire|forme de somme pondéréee|
+|:--:|:--:|
+|$\hat{y} = \theta_1 x_1 + \theta_2 x_2 + \dots + \theta_n x_n + \theta_0$|$\hat{y} = \sum_{i=0}^{n} \theta_i x_i$|
+
+
+
+|symbole|signification|
+|:--:|:--:|
+|$\hat{y}$ | valeur prédite|
+|$n$ | nombre de variables|
+|$\theta_i$ | i-ème paramètre du modèle|
+|$x_i$ | i-ème variable|
+
+Peut aussi s'écrire sous forme [vectorielle ou matricielle](regression_lineaire.md)
+
+
+
 #### Régression polynomiale
 permet de s'ajuster à des jeux de données non linéaires en introduisant des puissances des variables indépendantes. Elle utilise plus de paramètres, ce qui la rend plus flexible, mais également plus sujette au surajustement (overfitting).
 #### Régression logistique
 utilisée pour des problèmes de classification binaire, elle permet de prédire la probabilité d'appartenance à une classe en utilisant une fonction logistique (sigmoïde).
 #### Régression softmax
 une généralisation de la régression logistique utilisée pour les problèmes de classification multiclasse, qui permet de prédire les probabilités d'appartenance à plusieurs classes.
+<br>
+[Retour à l'index](#contexte-du-projet)
+<br>
 
 ## Validation croisée
 Dans un projet de Machine Learnig, il faut séparer les données :
@@ -206,7 +269,7 @@ Cela implique d'entrainer/tester le modèle plusieurs fois :
 2. entrainement puis évaluation du modèle K fois
     - en changeant de combinaison jeux d'entrainement / jeux d'évaluation à chaque itération
 <br>
-3. compare les résultats
+3. compare les résultats obtenus
 <br>
 
 Ainsi, toutes les tranches de donnée sont alternativement réservèes aux test.
@@ -215,33 +278,28 @@ Cela permet d'obtenir une estimation plus stable des performances.
 Nécessite l'utilisation d'une [fonction de fitness](#fonction-de-coût)
 
 
+#### Validation croisée avec un dataset divisé en 4 sous ensemble :
 
-[Retour à l'index](#index)
-<br>
-### Validation croisée en images
+|itération | entrainement | test| résultats|
+|:------:|:-------------:|:--------------:|:---------------:|
+|**1**|![train_4](img/cross_validation_train_4.png) |  ![test_4](img/cross_validation_test_4.png)|![track_4](img/cross_validation_track_4.png)|
+|**2** | entrainement avec les autres tranches|test avec la tranche 2|![track_3](img/cross_validation_track_3.png)|
+|**3** | entrainement avec les autres tranches|test avec la tranche 3|![track_2](img/cross_validation_track_2.png)|
+|**4** | entrainement avec les autres tranches|test avec la tranche 4|![track_1](img/cross_validation_track_1.png)|
 
-les k-1 premières tranches sont utilisé pour l'entrainement
-![train_4](img/cross_validation_train_4.png)
-la tranche k est utiliée pour le test
-![test_4](img/cross_validation_test_4.png)
-on note les résultats
-![track_4](img/cross_validation_track_4.png)
-puis c'est la tranche k-1 qui est réservée pour le test, on note les résultats
-![track_3](img/cross_validation_track_3.png)
 
-Et ainsi de suite pour chaque tranches jusquà la 1ère tranche
-![](img/cross_validation_test2-.png)
- puis on compile les résultats.
 
 L'idéal étant de faire une **validation croisée avec différent modèles** afin de les comparer :
 - Logistic regression
 - support vector machines
 - k-nearest neighbors
 - etc...
-![track_2](img/cross_validation_comparaison.png)
+<p align="center">
+  <img src="img/cross_validation_comparaison.png" alt="comparaison des résultats de la cross validation">
+</p>
 
 
-[Retour à l'index](#index)
+[Retour à l'index](#contexte-du-projet)
 
 ## Données d'entraînement, de test, de validation
 Dans un projet de Machine Learnig, il faut séparer les données :
@@ -254,7 +312,7 @@ Dans un projet de Machine Learnig, il faut séparer les données :
 Ces trois étapes – entraînement, test et validation – sont essentielles pour garantir que le modèle est fiable et performant avant son déploiement.
 
 
-### Entrainement
+#### Entrainement
 
 Après les phase de collecte, de nettoyage et de préparation des données :
 - recherche de correlations entre les variables
@@ -271,7 +329,7 @@ Il permet d'ajuster le modèle choisi aux données dans le but de faire des pré
 **- Surajustement** (overfitting) : le modèle apprend trop bien les détails et le bruit des données d'entraînement, ce qui nuit à sa capacité à généraliser.
 **- Sous-ajustement** (underfitting) : le modèle est trop simple et ne capte pas la structure sous-jacente des données.
 
-### test
+#### test
 La phase de test consiste à évaluer les performances du modèle sur un ensemble de données qui n'a pas été utilisé pendant l'entraînement.
 Cela permet d'obtenir une estimation objective de la capacité du modèle à généraliser ses prédictions sur des données inconnues.
 
@@ -288,7 +346,7 @@ On compare les prédictions du modèle avec les valeurs du jeu de test.
 - Identifier les biais et faiblesses du modèle 
 - Vérifier sa capacité à généraliser.
 
-### validation
+#### validation
 Après l'entraînement et le test, la validation est une étape cruciale.
 Elle vise à affiner le modèle et à s'assurer qu'il fonctionne correctement dans des conditions réelles.
 
@@ -298,20 +356,22 @@ Elle vise à affiner le modèle et à s'assurer qu'il fonctionne correctement da
 - Détecter le sous-ajustement : un modèle trop simple passe à côté des structures importantes.
 - Optimiser les performances : tester différentes configurations pour maximiser les résultats.
 - Généralisation : le jeu de validation permet d'estimer comment le modèle se comportera sur des données réelles et non vues auparavant.
-
-[Retour à l'index](#index)
+<br>
+[Retour à l'index](#contexte-du-projet)
 <br>
 ## Corrélation linéaire (de Pearson) entre deux variables
 
-Corrélation linéaire (de Pearson) entre deux variables
 La corrélation linéaire de Pearson mesure l'intensité et le sens de la relation linéaire entre deux variables quantitatives.
 
 Elle est définie par un coefficient, noté **r**, avec une **valeur comprise entre -1 et 1 :**
 | coefficient r|correlation|signification|
-|--|-------|-----|
-|**1**|Corrélation **positive forte**| lorsque l'une des variables augmente, l'autre augmente aussi|
-|**- 1**|Corrélation **négative forte**| lorsque l'une des variables augmente, l'autre diminue|
-|**0**|**Aucune corrélation linéaire**| les variables ne présentent pas de relation linéaire claire|
+|:--:|:-------:|-----|
+|**1**| positive forte| si une des variables augmente, l'autre augmente pareillement|
+|**0.3**| positive faible| si une des variables augmente, l'autre augmente moins|
+|**0**|Aucune corrélation linéaire| les variables ne présentent pas de relation linéaire claire|
+|**- 1**| négative forte| si une des variables augmente, l'autre diminue pareillement|
+|**- 0.3**| négative faible| si une des variables augmente, l'autre diminue moins|
+
 
 La formule du coefficient de Pearson est donnée par :
 ​$$ r = \frac{\sum (x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum (x_i - \bar{x})^2 \sum (y_i - \bar{y})^2}} $$
@@ -323,11 +383,34 @@ La formule du coefficient de Pearson est donnée par :
 - Le numérateur mesure la covariance entre \( x \) et \( y \)  
 - Le dénominateur normalise cette covariance par le produit des écarts-types des deux variables  
 
-
-**<font color="orange">Attention</font> : une corrélation forte ne signifie pas nécessairement une relation causale**
-
-[Retour à l'index](#index)
 <br>
+
+**Ci dessous**, pour des jeux de données à deux variables :
+le coefficient de corrélation et le nuage de points correspondant
+<p align="center">
+  <img src="img/correlation.svg" alt="corrélation">
+</p>
+
+- **2ème ligne :** coefficients = 1 ou -1  indépendemment de la pente
+- **3ème ligne :** coefficients nuls alors que les variables ne semblent pas indépendantes !
+   relations **non linéaires**
+
+<br>
+
+**Matrice de correlation d'un dataset de 4 variables sur les pétales de fleurs iris**
+<p align="center">
+  <img src="img/matrice_correlation.png" alt="matrice de corrélation">
+</p>
+
+**<font color="orange">Attention :</font>**
+- une corrélation forte ne signifie pas nécessairement une relation causale
+- ne détecte pas les relation non linéaires (par ex: si x proche de 0, y augmente)
+
+<br>
+
+[Retour à l'index](#contexte-du-projet)
+<br>
+
 ## Fonction de coût
 
 Mesure de performance qui permet de savoir si le modèle est bien parametré :
@@ -341,14 +424,14 @@ L'objectif lors de l'entraînement est de minimiser cette fonction pour amélior
 
 Différents types de fonctions de coût existent selon le problème traité :
 
-- Erreur quadratique moyenne (MSE) pour les problèmes de régression
-- Entropie croisée pour les problèmes de classification
-- Hinge loss pour les SVM (machines à vecteurs de support)
+- **Erreur quadratique moyenne (MSE)** pour les problèmes de **régression**
+- **Entropie croisée** pour les problèmes de **classification**
+- **Hinge loss** pour les **SVM (machines à vecteurs de support)**
 
 Un modèle bien paramétré aura donc une fonction de coût faible et, inversement, une fonction de fitness élevée, indiquant une bonne capacité du modèle à généraliser sur des données non vues.
-
-[Retour à l'index](#index)
-
+<br>
+[Retour à l'index](#contexte-du-projet)
+<br>
 ## Descente de gradient
 Ou **Gradient Descent** en anglais **GD**
 
@@ -359,5 +442,5 @@ Il existe plusieurs variantes :
 - Descente de gradient groupée (batch)
 - Descente de gradient par mini-lots
 - Descente de gradient stochastique
-
-[Retour à l'index](#index)
+<br>
+[Retour à l'index](#contexte-du-projet)
