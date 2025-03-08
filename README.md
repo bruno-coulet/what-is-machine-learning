@@ -101,7 +101,10 @@ Prédit une valeur numérique **cible (target)** à partir des valeurs **caract�
 <p align="center">
    <img src ="img/deep_learning.png" alt ="deep learning">
 </p>
-Procédé d’apprentissage automatique utilisant des [réseaux de neurones](reseaux_neurone.md) composé de nombreuses couches cachées et des algorithmes avec de très nombreux paramètres.
+Procédé d’apprentissage automatique utilisant des [réseaux de neurones](reseaux_neurones.md)
+
+
+ composé de nombreuses couches cachées et des algorithmes avec de très nombreux paramètres.
 Ce procédé requière une grande quantité de données afin d’être entraîné.
 
 <p align="center">
@@ -231,6 +234,8 @@ c'est à dire :
 |$\hat{y} = \theta_1 x_1 + \theta_2 x_2 + \dots + \theta_n x_n + \theta_0$|$\hat{y} = \sum_{i=0}^{n} \theta_i x_i$|
 
 
+<br>
+<br>
 
 |symbole|signification|
 |:--:|:--:|
@@ -311,9 +316,6 @@ Dans un projet de Machine Learnig, il faut séparer les données :
  
 Ces trois étapes – entraînement, test et validation – sont essentielles pour garantir que le modèle est fiable et performant avant son déploiement.
 
-
-#### Entrainement
-
 Après les phase de collecte, de nettoyage et de préparation des données :
 - recherche de correlations entre les variables
 - gestion des variables quantitative (stratification, normalisation, ...)
@@ -324,12 +326,33 @@ Vient la phase de l'**entrainement du modèle**.
 supervisé ou non supervisé selon que les données contiennent ou non des étiquettes (labels)
 Il permet d'ajuster le modèle choisi aux données dans le but de faire des prédictions ou de la classification sur de nouvelles données
 
+## Entrainement
+
+Entrainer un modèle consiste à définir ses paramètres de telle sorte qu'ils s'ajustent au mieux au jeu d'entrainement
+
+Mesure courante pour indiquer si un modèle de **Regression** s'ajuste bien ou pas aux donnée d'entrainement :
+- **RMSE** racine carrée des erreurs quadratique moyenne -(root mean square error)
+- **MSE** erreur quadratique moyenne - (mean square error)
+
+Pour entrainer un modèle de régression linéaire, il faut donc trouver le vecteur $\theta$ qui minimise la RMSE
+
+En pratique, il est plus simple de minimiser la MSE que la RMSE
+
+### Entrainement - Méthode analytique
+Calcul les valeurs des paramètres du modèle qui donnent le meilleur résultat sur le jeu d'entrainement
+(qui minimise la fonction de coût)
+
+### Entrainement - Descente de gradient
+ou *Gradient Descent* en anglais
+Optimisation itérative qui modifie graduellement les paramètres du modèle pour minimiser la fonction de coût sur le jeu d'entrainement
+**Converge au final vers le même jeu de paramètres que la méthode analytique**
+
 **Problématique :**
 
 **- Surajustement** (overfitting) : le modèle apprend trop bien les détails et le bruit des données d'entraînement, ce qui nuit à sa capacité à généraliser.
 **- Sous-ajustement** (underfitting) : le modèle est trop simple et ne capte pas la structure sous-jacente des données.
 
-#### test
+## test
 La phase de test consiste à évaluer les performances du modèle sur un ensemble de données qui n'a pas été utilisé pendant l'entraînement.
 Cela permet d'obtenir une estimation objective de la capacité du modèle à généraliser ses prédictions sur des données inconnues.
 
@@ -346,7 +369,7 @@ On compare les prédictions du modèle avec les valeurs du jeu de test.
 - Identifier les biais et faiblesses du modèle 
 - Vérifier sa capacité à généraliser.
 
-#### validation
+## validation
 Après l'entraînement et le test, la validation est une étape cruciale.
 Elle vise à affiner le modèle et à s'assurer qu'il fonctionne correctement dans des conditions réelles.
 
@@ -424,7 +447,7 @@ L'objectif lors de l'entraînement est de minimiser cette fonction pour amélior
 
 Différents types de fonctions de coût existent selon le problème traité :
 
-- **Erreur quadratique moyenne (MSE)** pour les problèmes de **régression**
+- [**Erreur quadratique moyenne (MSE)**](#regression-lineaire.md) pour les problèmes de **régression**
 - **Entropie croisée** pour les problèmes de **classification**
 - **Hinge loss** pour les **SVM (machines à vecteurs de support)**
 
