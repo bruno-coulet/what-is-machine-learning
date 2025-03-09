@@ -82,7 +82,8 @@ Prédire une catégorie ou une étiquette à partir des caractéristiques des do
 **exemple :**  filtre de spam à partir d'e-mail accompagnés de leur classe (normal/spam) 
 
 #### La régression - prédire des valeurs
-Prédit une valeur numérique **cible (target)** à partir des valeurs **caractéristiques(feature)** d'attributs ou de variables d'une observation
+Prédit une valeur numérique **cible (target)** à partir des valeurs **caractéristiques (feature)** d'attributs ou de variables d'une observation
+
 **exemple :** prédire le prix d'une voiture en fonction de son age, de son kilométrage, etc...
 
 ### Terminologie :
@@ -92,6 +93,10 @@ Prédit une valeur numérique **cible (target)** à partir des valeurs **caract�
 **caractéristique :** un attribut et sa valeur (ex: kilométrage = 58 000 km)
 **variable à expliquer :** étiquette
 **attribut :** type de donnée (ex: kilométrage)
+ **intercept** : dans une équation de régression linéaire, c'est le terme constant (\( \theta_0 \)), représentant la valeur de la variable à expliquer lorsque toutes les variables explicatives sont égales à zéro. C'est le point d'intersection avec l'axe des ordonnées.
+**biais** : synonyme d'intercept dans les modèles de régression. Il représente l'ajustement constant nécessaire pour mieux prédire la variable à expliquer, indépendamment des variables explicatives. Dans un modèle d'apprentissage automatique, c'est la valeur qui est ajoutée avant d'appliquer les coefficients aux variables explicatives.
+
+Intercept et biais sont souvent utilisés de manière interchangeable, en particulier dans le contexte de modèles de régression, où le biais ajuste la sortie avant d'appliquer les coefficients aux variables explicatives.
 
 
 [Retour à l'index](#contexte-du-projet)
@@ -225,24 +230,29 @@ L'objectif est d'**identifier des structures** cachées **ou des regroupements n
 En mathématiques, la régression recouvre plusieurs méthodes d’analyse statistique permettant d’approcher une variable à partir d’autres qui lui sont corrélées.
 
 #### Régression linéaire  {#regression-lineaire}
-méthode simple qui modélise la relation entre une variable dépendante (en sortie) et une ou plusieurs variables indépendantes (en entrée) par une droite.
+méthode de modélisation de la **relation entre une ou plusieurs variables indépendantes X (en entrée) et une variable dépendante y (en sortie)** par une droite.
+
+Un modèle linéaire effectue une prédiction en calculant une somme pondérée de variables d'entrée en y ajoutant un terme constant (intercept)
+
+**Autrement dit :** y est une combinaison linéaire des features 𝑋 et un terme d'erreur qui introduit des imprécisions ou de la variabilité.
+
+[notebook regression_lineaire](regression.ipynb)
 
 **prédiction =  somme pondérée des variables d'entrée plus une constante**
 c'est à dire :
-|forme scalaire|forme de somme pondéréee|
+|forme scalaire|forme de somme pondérée|
 |:--:|:--:|
 |$\hat{y} = \theta_1 x_1 + \theta_2 x_2 + \dots + \theta_n x_n + \theta_0$|$\hat{y} = \sum_{i=0}^{n} \theta_i x_i$|
 
-
-<br>
-<br>
+²<br>
 
 |symbole|signification|
 |:--:|:--:|
 |$\hat{y}$ | valeur prédite|
 |$n$ | nombre de variables|
-|$\theta_i$ | i-ème paramètre du modèle|
-|$x_i$ | i-ème variable|
+|$\theta_i$ | paramètre du modèle, coefficient|
+|$x_i$ | variable explicative|
+|$\theta_0$|	Biais (intercept, constante), valeur de $𝑦$ lorsque toutes les variables $𝑥_𝑖$ sont égales à zéro|
 
 Peut aussi s'écrire sous forme [vectorielle ou matricielle](regression_lineaire.md)
 
