@@ -59,7 +59,7 @@ $$ RMSE(X, h) = \sqrt{\frac{1}{m} \sum_{i=1}^{m} \left( h (x^{(i)}) - y^{(i)} \r
 
 
 ### Equation normale - solution analytique
-formule mathématique qui donne lavaleur minimal de $\theta$
+[formule mathématique qui donne lavaleur minimal de $\theta$](regression.ipynb#equation-normale)
 $$ \hat{\theta} = (X^T X)^{-1} X^T y $$
 
 | Symbole                            | signification |

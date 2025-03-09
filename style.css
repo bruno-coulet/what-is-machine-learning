@@ -1,0 +1,17 @@
+/* Centrer le texte dans un tableau */
+table, p {
+    text-align: center;
+  }
+  
+  /* Centrer les images */
+  img {
+    display: block;
+    margin: auto;
+  }
+  
+  /* Mettre un encadré coloré pour un paragraphe spécifique */
+  .encadre {
+    border: 2px solid #4caf50;
+    padding: 10px;
+    border-radius: 8px;
+  }
