@@ -462,6 +462,11 @@ Différents types de fonctions de coût existent selon le problème traité :
 - **Hinge loss** pour les **SVM (machines à vecteurs de support)**
 
 Un modèle bien paramétré aura donc une fonction de coût faible et, inversement, une fonction de fitness élevée, indiquant une bonne capacité du modèle à généraliser sur des données non vues.
+
+#### A noter
+<font color ="orange">La fonction de coût MSE du modèle de regression linéaire</font> est une **fonction convexe (en cloche)**
+Elle à donc <font color ="orange">un minimum global</font> , mais <font color ="orange">pas de minimum local</font>
+C'est aussi une fonction continue, sa pente ne varie jamais abruptement.
 <br>
 [Retour à l'index](#contexte-du-projet)
 <br>
@@ -469,11 +474,17 @@ Un modèle bien paramétré aura donc une fonction de coût faible et, inverseme
 Ou **Gradient Descent** en anglais **GD**
 
 Méthode d'entrainement d'un modèle de regression linéaire par **optimisation itérative**
-Consiste enune modification graduelle du paramêtre du modèle pour diminuer la fonction de coût sur le jeu d'entrainement
+Consiste en une modification graduelle du paramêtre du modèle pour diminuer la fonction de coût sur le jeu d'entrainement
 
 Il existe plusieurs variantes :
 - Descente de gradient groupée (batch)
 - Descente de gradient par mini-lots
 - Descente de gradient stochastique
+
+<br>
+
+La descente de gradient calcule le gradient de la fonction coût au point $\theta$, puis progresse en direction du gradient descendant.
+
+
 <br>
 [Retour à l'index](#contexte-du-projet)
