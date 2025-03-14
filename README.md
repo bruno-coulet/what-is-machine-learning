@@ -3,7 +3,7 @@
 ## Contexte du projet
 Travail personnel de recherches et de documentation pour la définition des éléments suivants :
 
-<!-- - [Sources](#sources) -->
+
 1. [Science des données](#science-des-données)
 2. [Apprentissage automatique ](#apprentissage-automatique)
 3. [Apprentissage supervisé](#apprentissage-supervisé)
@@ -32,6 +32,7 @@ Travail personnel de recherches et de documentation pour la définition des él�
    - math.univ-angers.fr/labatte/enseignement/master/classificationsupervisee.pdf
    - [IBM](https://www.ibm.com/fr-fr/topics/machine-learning)
    - [CNIL](https://www.cnil.fr/fr/definition/apprentissage-automatique)
+   - [ekinox.io](https://blog.ekinox.io/ml/normalisation-series-temporelles)
    - [wikipedia](https://fr.wikipedia.org/wiki/Apprentissage_automatique)
 
 </div>
@@ -93,7 +94,7 @@ Prédit une valeur numérique **cible (target)** à partir des valeurs **caract�
 **caractéristique :** un attribut et sa valeur (ex: kilométrage = 58 000 km)
 **variable à expliquer :** étiquette
 **attribut :** type de donnée (ex: kilométrage)
- **intercept** : dans une équation de régression linéaire, c'est le terme constant (\( \theta_0 \)), représentant la valeur de la variable à expliquer lorsque toutes les variables explicatives sont égales à zéro. C'est le point d'intersection avec l'axe des ordonnées.
+ **intercept** : dans une équation de régression linéaire, c'est le terme constant ($ \theta_0 $), représentant la valeur de la variable à expliquer lorsque toutes les variables explicatives sont égales à zéro. C'est le point d'intersection avec l'axe des ordonnées.
 **biais** : synonyme d'intercept dans les modèles de régression. Il représente l'ajustement constant nécessaire pour mieux prédire la variable à expliquer, indépendamment des variables explicatives. Dans un modèle d'apprentissage automatique, c'est la valeur qui est ajoutée avant d'appliquer les coefficients aux variables explicatives.
 
 Intercept et biais sont souvent utilisés de manière interchangeable, en particulier dans le contexte de modèles de régression, où le biais ajuste la sortie avant d'appliquer les coefficients aux variables explicatives.
@@ -411,9 +412,9 @@ La formule du coefficient de Pearson est donnée par :
 
 
 - **r** : le coefficient de corrélation linéaire de Pearson  
-- **\( x_i \)** et **\( y_i \)** : les valeurs des deux variables étudiées  
-- **\( \bar{x} \)** et **\( \bar{y} \)** : les moyennes des variables \( x \) et \( y \)  
-- Le numérateur mesure la covariance entre \( x \) et \( y \)  
+- **$ x_i $** et **$ y_i $** : les valeurs des deux variables étudiées  
+- **$ \bar{x} $** et **$ \bar{y} $** : les moyennes des variables $ x $et $ y $ 
+- Le numérateur mesure la covariance entre $ x $et $ y $ 
 - Le dénominateur normalise cette covariance par le produit des écarts-types des deux variables  
 
 <br>
@@ -485,6 +486,112 @@ Il existe plusieurs variantes :
 
 La descente de gradient calcule le gradient de la fonction coût au point $\theta$, puis progresse en direction du gradient descendant.
 
+L'idée générale est de <font color="orange">corriger petit à petit les paramètres pour minimiser la fonction de coût</font>
+<font color="orange">
+1. calcul le gradient de la fonction coût au point $\theta$ aléatoire
+2. progresse en direction du gradient descendant
+3. en fonction du pas : hyperparamètre `learning_rate`
+</font>
+
+<br>
+
+**Différent pas (taux d'apprentissage) d'une descente de gradient de fonction convexe, , comme la focntion MSE**
+
+![learning rate](img/learning_rate.jpg)
+
+La fonction de coût MSE est convexe, elle à donc un minimum global, pas de minimum local, pas de variation abrupte de pente.
+
+<font color ="orange">Pour une descente de gradient, toutes les variables doivent avoir la même echelle, sinon la convergence sera plus lente</font>
+
+![Avec et sans normalisation des variable](img/gd_normalize.png)
+
+
+
+|Coût|
+|:----:|
+|$J(\theta) = \frac{1}{m} \sum_{i=1}^{m} \left( h_\theta(x^{(i)}) - y^{(i)} \right)^2$|
+
+<br>
+<br>
+
+|dérivée partielle par rapport à un paramètre $\theta_j$ |
+|:----:|
+|$\frac{\partial J(\theta)}{\partial \theta_j} = \frac{1}{m} \sum_{i=1}^{m} \left( h_\theta(x^{(i)}) - y^{(i)} \right) x_j^{(i)}$|
+
+<br>
+<br>
+
+---
+## Fonction de coût MSE
+
+$$
+MSE(X, h_\theta) = \frac{1}{m} \sum_{i=1}^{m} \left( \theta^T x^{(i)} - y^{(i)} \right)^2
+$$
+<br>
+<br>
+
+
+---
+## Dérivée partielle
+On note $$ℎ𝜃(x^{(  i)})=𝜃^𝑇𝑥^{(𝑖)}$$
+Donc la dérivée partielle du MSE par rapport à $θ_j​$  est :
+
+Dérivée partielle par rapport à $\theta_j$
+
+$$
+\frac{\partial MSE}{\partial \theta_j} = \frac{1}{m} \sum_{i=1}^{m}2 \left( \theta^T x^{(i)} - y^{(i)} \right) x_j^{(i)}
+$$
+
+Dérivée partielle par rapport à $\theta_j$ simplifiée
+
+$$
+\frac{\partial MSE}{\partial \theta_j} = \frac{2}{m} \sum_{i=1}^{m} \left( \theta^T x^{(i)} - y^{(i)} \right) x_j^{(i)}
+$$
+
+
+
+
+| Symbole               | Signification |
+|-----------------------|--------------|
+| $MSE(X, h_\theta) $  | Erreur quadratique moyenne (Mean Squared Error) |
+| $\theta $        | Vecteur des paramètres du modèle |
+| $\theta_j $      | $j $-ième paramètre du modèle |
+| $\theta^T x^{(i)} $ | Produit scalaire entre $\theta $ et $x^{(i)} $, soit la prédiction du modèle |
+| $m $            | Nombre total d'exemples d'entraînement |
+| $x^{(i)} $      | Vecteur des caractéristiques de l'exemple $i $ |
+| $x_j^{(i)} $    | $j $-ième caractéristique de l'exemple $i $ |
+| $y^{(i)} $      | Valeur réelle de sortie pour l'exemple $i $ |
+| $h_\theta(x^{(i)}) $ | Prédiction du modèle pour l'exemple $i $ (équivalent à $\theta^T x^{(i)} $) |
+| $\alpha $      | Taux d'apprentissage (learning rate) |
+
+<br>
+<br>
+
+---
+### Vecteur Gradient du MSE
+
+Pour calculer
+**Vecteur Gradient du MSE**
+$$
+\nabla_\theta MSE = \frac{2}{m} X^T (X\theta - y)
+$$
+
+
+
+
+| Symbole                    | Signification |
+|----------------------------|--------------|
+| $ \nabla_\theta MSE $      | Gradient du MSE (vecteur des dérivées partielles) |
+| $ X $                      | Matrice des caractéristiques de taille $ m \times n $ |
+| $ y $                      | Vecteur des valeurs réelles de taille $ m \times 1 $ |
+| $ \theta $                 | Vecteur des paramètres du modèle de taille $ n \times 1 $ |
+| $ X\theta $                | Prédictions du modèle (produit matriciel) de taille $ m \times 1 $ |
+| $ X^T $                    | Transposée de la matrice $ X $, de taille $ n \times m $ |
+| $ X^T (X\theta - y) $      | Gradient du MSE avant multiplication par $ \frac{2}{m} $ |
+| $ \alpha $                 | Taux d'apprentissage (learning rate) |
+
 
 <br>
 [Retour à l'index](#contexte-du-projet)
+
+
