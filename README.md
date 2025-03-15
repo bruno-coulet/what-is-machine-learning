@@ -507,36 +507,46 @@ La fonction de coût MSE est convexe, elle à donc un minimum global, pas de min
 
 
 
-|Coût|
-|:----:|
-|$J(\theta) = \frac{1}{m} \sum_{i=1}^{m} \left( h_\theta(x^{(i)}) - y^{(i)} \right)^2$|
 
-<br>
-<br>
+## Fonction de coût MSE pour le modèle de régression linéaire
 
-|dérivée partielle par rapport à un paramètre $\theta_j$ |
-|:----:|
-|$\frac{\partial J(\theta)}{\partial \theta_j} = \frac{1}{m} \sum_{i=1}^{m} \left( h_\theta(x^{(i)}) - y^{(i)} \right) x_j^{(i)}$|
+Voir la [fonction de coût](#regression-lineaire.md) du modèle de regression linéaire
 
-<br>
-<br>
-
----
-## Fonction de coût MSE
-
+Peut s'écrire de plusieurs manières :<br>
+$MSE(X, h_\theta)$, pour montrer que le modèle est paramétré par le vecteur $\theta$<br>$MSE(X, h)$<br>
+$MSE(\theta)$ pour simplifier
 $$
 MSE(X, h_\theta) = \frac{1}{m} \sum_{i=1}^{m} \left( \theta^T x^{(i)} - y^{(i)} \right)^2
 $$
+
+S'écrit aussi
+
+$$J(\theta) = \frac{1}{m} \sum_{i=1}^{m} \left( h_\theta(x^{(i)}) - y^{(i)} \right)^2$$
+
+
+|symbole|signification|
+|:--:|:--------|
+|$m$ | nombre total d'exemples dans l'ensemble d'entraînement.|
+|$𝑥(𝑖)$  | vecteur des caractéristiques de l'exemple 𝑖|
+|$𝜃$ | vecteur des paramètres du modèle.|
+|$𝜃𝑇𝑥(𝑖)$ <font color = "orange">ou</font> $h (x^{(i)})$ | prédiction du modèle pour $𝑥(𝑖)$|
+|$y(i)$|valeur réelle associée à $𝑥_i$|
+|$ (\theta^T x^{(i)} - y^{(i)})^2 $|erreur quadratique pour un exemple donné|
 <br>
 <br>
 
+## Dérivée partielle par rapport à un paramètre $\theta_j$
 
----
+$$\frac{\partial J(\theta)}{\partial \theta_j} = \frac{1}{m} \sum_{i=1}^{m} \left( h_\theta(x^{(i)}) - y^{(i)} \right) x_j^{(i)}$$
+
+<br>
+
+
+
 ## Dérivée partielle
-On note $$ℎ𝜃(x^{(  i)})=𝜃^𝑇𝑥^{(𝑖)}$$
-Donc la dérivée partielle du MSE par rapport à $θ_j​$  est :
+On note $ℎ𝜃(x^{(  i)})=𝜃^𝑇𝑥^{(𝑖)}$<br><br>
+Donc la dérivée partielle du MSE par rapport à $\theta_j$  est :
 
-Dérivée partielle par rapport à $\theta_j$
 
 $$
 \frac{\partial MSE}{\partial \theta_j} = \frac{1}{m} \sum_{i=1}^{m}2 \left( \theta^T x^{(i)} - y^{(i)} \right) x_j^{(i)}
