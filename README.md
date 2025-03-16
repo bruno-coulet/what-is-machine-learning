@@ -599,11 +599,10 @@ Si :
   <img src="img/gradient_descent/regression_8.png"/>
 
 
-### Sur ous les paramètres simultanément
+### Sur tous les paramètres simultanément
 
 En pratique, l'algorithme de descente de gradient modifie tous les paramètres à chaque itération
-
-Descente de gradient sur 2 paramètres simultanément: `pente`et `intercept`
+Exemple de descente de gradient sur 2 paramètres simultanément: `pente`et `intercept`
 <img src="img/gradient_descent/gd_2_parametres.png">
 
 **Calcul de la taille du pas entre chaque itération :**
