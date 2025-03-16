@@ -467,6 +467,9 @@ C'est aussi une fonction continue, sa pente ne varie jamais abruptement.
 <br>
 [Retour à l'index](#contexte-du-projet)
 <br>
+
+
+
 ## Descente de gradient
 Ou **Gradient Descent** en anglais **GD**
 
@@ -483,20 +486,20 @@ Il existe plusieurs variantes :
 La descente de gradient calcule le gradient de la fonction coût au point $\theta$, puis progresse en direction du gradient descendant.
 
 L'idée générale est de <font color="orange">corriger petit à petit les paramètres pour minimiser la fonction de coût</font>
-<font color="orange">
+
+S'il y à plusieurs paramètres, il y a plusieurs dérivées pour la même fonction. On appele alors ces dérivées des gradients
+
+
 1. calcul le gradient de la fonction coût au point $\theta$ aléatoire
 2. progresse en direction du gradient descendant
 3. en fonction du pas : hyperparamètre `learning_rate`
-</font>
+
 
 
 Le **résiduel** est la différence entre la valeur réelle (target) d'une observation et la valeur prédite par le modèle.
-**MSR** = erreur moyenne des résidus pour un modèle donné (c'est ce qu'on visualise ci-dessous).
-**MSE** = erreur moyenne finale sur toutes les prédictions, une fois l'optimisation terminée.
+**SSR** = somme des résidus pour un modèle donné (c'est ce qu'on visualise ci-dessous).
 
-[Formule MSE](formules.md#MSE)
 <br>
-
 
 ### Etapes de la descente de gradient
 Pour une descente de gradient appliquée à une fonction de type **y = aX + b**  
@@ -523,13 +526,16 @@ Pour une descente de gradient appliquée à une fonction de type **y = aX + b**
 
 Après plusieurs itérations, **a** et **b** seront ajustés pour minimiser l’erreur, donnant la meilleure droite de régression possible.
 
-**Par exemple :**
+### Exemple de descente de gradient
+
 ||fonction de type `y  = aX + b`|
 |:-:|:-|
 |`y`|prédiction - target|
 |`a`|pente - slope - coefficient|
 |`X`|vecteur des valeurs - feature|
 |`b`| `intercept` - valeur `y` de la pente quand elle coupe l'axe des ordonnées y<br> (x = 0) |
+
+#### Sur un seul paramètre - pour bien comprendre le fonctionnement
 
 **Etapes :**
 - On choisi la Sum of Square Residuals comme fonction de coût
@@ -592,6 +598,13 @@ Si :
 **`intercept` = 1,85**
   <img src="img/gradient_descent/regression_8.png"/>
 
+
+### Sur ous les paramètres simultanément
+
+En pratique, l'algorithme de descente de gradient modifie tous les paramètres à chaque itération
+
+Descente de gradient sur 2 paramètres simultanément: `pente`et `intercept`
+<img src="img/gradient_descent/gd_2_parametres.png">
 
 **Calcul de la taille du pas entre chaque itération :**
 Le pas (ou taux de mise à jour) entre chaque itération dans la descente de gradient est influencé par la pente de la fonction de coût et le learning rate (taux d'apprentissage).
