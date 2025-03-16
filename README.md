@@ -531,6 +531,15 @@ Après plusieurs itérations, **a** et **b** seront ajustés pour minimiser l’
 |`X`|vecteur des valeurs - feature|
 |`b`| `intercept` - valeur `y` de la pente quand elle coupe l'axe des ordonnées y<br> (x = 0) |
 
+**Etapes :**
+- On choisi la Sum of Square Residuals comme fonction de coût
+- calcul la dérivée de la fonction de coût
+- `intercept` = 0 comme valeur de départ
+- calcul de la dérivé quand `intercept` = 0
+- calcul du pas en conséquence
+- calcul d'un nouvel `intercept`
+- calcul de la dérivé avec le nouvel `intercept`
+- bis répétita jusqu'à ce que la pas approche de 0
 
 Si :
 1. on connait la `pente` et l'`intercept`:
@@ -556,7 +565,9 @@ Si :
 <br>
 <br>
 
-**On répète l'opération avec `intercept` = 0,25 :**
+**On répète l'opération avec**
+`pas` = `dérivée` * `learning_rate`
+`nouveaux intercept` = `intercept` - `pas` = 0,25
 
 |Jeu d'entrainement|Mean Square Residuals|
 |:--|:--|
@@ -582,6 +593,34 @@ Si :
   <img src="img/gradient_descent/regression_8.png"/>
 
 
+**Calcul de la taille du pas entre chaque itération :**
+Le pas (ou taux de mise à jour) entre chaque itération dans la descente de gradient est influencé par la pente de la fonction de coût et le learning rate (taux d'apprentissage).
+
+La pente de la descente de gradient, correspond à la dérivée partielle de la fonction de coût par rapport aux paramètres
+
+**pas = pente de la dérivée de la descente de gradient * learning_rate**
+
+**La pente de la fonction de coût est raide** (la dérivée est grande)
+ un grand pas est nécessaire pour faire un grand ajustement.
+
+**La pente est plate** (dérivée petite)
+un petit pas est préférable pour éviter de trop ajuster le paramètre et risquer de diverger
+
+**La decente de gradient s'arrête quand le pas (et la pente) s'approche de 0**
+<br>
+Différent pas d'une descente de gradient de fonction convexe (type fcnction MSE)
+
+![learning rate](img/learning_rate.jpg)
+
+*La fonction de coût MSE est convexe, elle à donc un minimum global mais pas de minimum local, pas de variation abrupte de pente.*
+
+Le pas pour la mise à jour des paramètres à chaque itération est calculé comme suit :
+$$
+\text{nouveau pas} = \text{pas actuel} - \text{learning rate} \times \frac{\partial \text{MSR}}{\partial \text{paramètre (ici intercept)}}$$
+
+
+Quand la pente de la dérivé de la descente de gradient s'approche de 0, on s'approche d'un minimum
+
 ### Calcul de la dérivée partielle
 À chaque itération de la descente de gradient :
 
@@ -602,11 +641,7 @@ Ainsi, en calculant les dérivées partielles pour chaque paramètre, nous savon
 
 <br>
 
-**Différent pas (taux d'apprentissage) d'une descente de gradient de fonction convexe, , comme la focntion MSE**
 
-![learning rate](img/learning_rate.jpg)
-
-La fonction de coût MSE est convexe, elle à donc un minimum global, pas de minimum local, pas de variation abrupte de pente.
 
 <font color ="orange">Pour une descente de gradient, toutes les variables doivent avoir la même echelle, sinon la convergence sera plus lente</font>
 
