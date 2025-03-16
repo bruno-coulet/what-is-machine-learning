@@ -52,7 +52,7 @@ $MSE(X, h_\theta)$<br>$MSE(X, h)$ comme pour la RMSE ci-dessous<br>$MSE(\theta)$
 
 <font color = "orange">Le MSE pénalise les grandes erreurs plus fortement que les petites erreurs, ce qui le rend sensible aux valeurs aberrantes (outliers).</font>
 
-### Fonction de coût MSE pour le modèle de régression linéaire
+### Fonction de coût RMSE pour le modèle de régression linéaire
 
 $$ RMSE(X, h) = \sqrt{\frac{1}{m} \sum_{i=1}^{m} \left( h (x^{(i)}) - y^{(i)} \right)^2} $$
 

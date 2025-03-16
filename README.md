@@ -407,15 +407,9 @@ Elle est définie par un coefficient, noté **r**, avec une **valeur comprise en
 |**- 0.3**| négative faible| si une des variables augmente, l'autre diminue moins|
 
 
-La formule du coefficient de Pearson est donnée par :
-​$$ r = \frac{\sum (x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum (x_i - \bar{x})^2 \sum (y_i - \bar{y})^2}} $$
+[Formule du coefficient de Pearson](formules.md#coefficient-de-pearson)
 
 
-- **r** : le coefficient de corrélation linéaire de Pearson  
-- **$ x_i $** et **$ y_i $** : les valeurs des deux variables étudiées  
-- **$ \bar{x} $** et **$ \bar{y} $** : les moyennes des variables $ x $et $ y $ 
-- Le numérateur mesure la covariance entre $ x $et $ y $ 
-- Le dénominateur normalise cette covariance par le produit des écarts-types des deux variables  
 
 <br>
 
@@ -462,6 +456,8 @@ Différents types de fonctions de coût existent selon le problème traité :
 - **Entropie croisée** pour les problèmes de **classification**
 - **Hinge loss** pour les **SVM (machines à vecteurs de support)**
 
+[Formule MSE](formules.md#MSE)
+
 Un modèle bien paramétré aura donc une fonction de coût faible et, inversement, une fonction de fitness élevée, indiquant une bonne capacité du modèle à généraliser sur des données non vues.
 
 #### A noter
@@ -494,33 +490,114 @@ L'idée générale est de <font color="orange">corriger petit à petit les param
 </font>
 
 
+Le **résiduel** est la différence entre la valeur réelle (target) d'une observation et la valeur prédite par le modèle.
+**MSR** = erreur moyenne des résidus pour un modèle donné (c'est ce qu'on visualise ci-dessous).
+**MSE** = erreur moyenne finale sur toutes les prédictions, une fois l'optimisation terminée.
+
+[Formule MSE](formules.md#MSE)
 <br>
 
-**Par exemple : Une fonction de type `y  = aX + b`**
+
+### Etapes de la descente de gradient
+Pour une descente de gradient appliquée à une fonction de type **y = aX + b**  
+
+#### 1️⃣ Initialisation des paramètres  
+- Choisir des valeurs initiales pour **a** et **b** (souvent aléatoires ou à zéro).  
+- Définir un **taux d’apprentissage (learning rate)** qui contrôle la vitesse de mise à jour des paramètres.  
+
+#### 2️⃣ Calcul des prédictions et de l'erreur   
+- Pour chaque point de données (X, y), calculer la valeur prédite **ŷ = aX + b**. 
+- Comparer chaque prédiction **ŷ** avec la valeur réelle **y**.  
+- Calculer l’erreur (écart entre la prédiction et la vraie valeur). 
+
+#### 3️⃣ Calcul des gradients  
+- Déterminer **dans quelle direction** ajuster **a** et **b** pour réduire l’erreur.  
+- Cela revient à mesurer l’impact d’une petite variation de **a** et **b** sur l’erreur globale.  
+
+#### 4️⃣ Mise à jour des paramètres  
+- Modifier **a** et **b** dans la direction qui réduit l’erreur, en fonction du taux d’apprentissage.  
+
+#### 5️⃣  Répétition jusqu'à convergence  
+- Répéter les étapes 2 à 5 jusqu’à ce que les mises à jour deviennent très petites (l’algorithme converge).  
+- Si nécessaire, ajuster le **taux d’apprentissage** pour éviter des oscillations ou une descente trop lente.  
+
+Après plusieurs itérations, **a** et **b** seront ajustés pour minimiser l’erreur, donnant la meilleure droite de régression possible.
+
+**Par exemple :**
+||fonction de type `y  = aX + b`|
+|:-:|:-|
+|`y`|prédiction - target|
+|`a`|pente - slope - coefficient|
+|`X`|vecteur des valeurs - feature|
+|`b`| `intercept` - valeur `y` de la pente quand elle coupe l'axe des ordonnées y<br> (x = 0) |
+
+
+Si :
+1. on connait la `pente` et l'`intercept`:
+  - `a` = 0,64
+  - `b` ou `intercept` = 0 ( choisis aléatoirement)
+<br>
+2. Alors, on peut tracer <font color="green">la ligne qui passe par `b` ou `intercept`, c'est à dire par `0` dans cet exemple</font>
+<br>
+3. et donc calculer le `MSR`<br>le carré des écarts entre les ordonnées `y`(target) des valeurs du jeux d'entrainement et les <font color="green">valeurs y de la ligne</font>
+**Mean Square Residuals** est une mesure intermédiaire qui guide l'optimisation.
+
+ <br>
+4. Tracer sur un le graphe de droite le <font color="red">point de coordonnées</font> :
+  - en abscisse `x` : `intercept`  (donc 0, que l'on a choisi précédement)
+  - en ordonnée `y` : `residual` (que l'on vient de calculer)<br>
+
+|Graphe de gauche <br> Jeu d'entrainement|Graphe de droite <br> Mean Square Residuals|
+|:--|:--|
+|<font color="green">droite y = aX +b</font> <br>`ordonnée` = `intercept`ou `b (pour x = 0)` = 0|`abscisse x` = `intercept` = 0 <br> `ordonnée y` = somme des `residuals`|
+
+<img src="img/gradient_descent/regression_1.png"/>
 
 <br>
-prediction y  = la pente . X + intercept
 <br>
-Si on connait la pente, pente = 0,64<br><br>
-Prenons aléatoirement `b` ou `intercept` = `0`<br>
-Cela permet de tracer une ligne qui passe par `0`<br>
-Puis de caluler le carré des écarts entre les valeurs cible du jeux d'entrainement et les valeur de la ligne
-  <img src="img/gradient_descent/regression_1.png"/>
-On répète l'opération avec `intercept`=`0,25`
-  <img src="img/gradient_descent/regression_2.png"/>
-`intercept`=`0,5`
-  <img src="img/gradient_descent/regression_3.png"/>
-`intercept`=`0,9`
-  <img src="img/gradient_descent/regression_4.png"/>
-`intercept`=`1`
-  <img src="img/gradient_descent/regression_5.png"/>
-`intercept`=`1,3`
-  <img src="img/gradient_descent/regression_6.png"/>
+
+**On répète l'opération avec `intercept` = 0,25 :**
+
+|Jeu d'entrainement|Mean Square Residuals|
+|:--|:--|
+|<font color="green">droite y = aX +b</font> <br>`ordonnée` = `intercept`ou `b (pour x = 0)` = 0.25|`abscisse x` = `intercept` = 0.25 <br> `ordonnée y` = somme des `residuals`|
+
+<font color="green">Graphe de gauche</font>, `y` = 0.25 pour `x`= 0
+<font color="red">Graphe de droite</font>, `x` = 0.25, `y` = somme des `residual`
+<img src="img/gradient_descent/regression_2.png"/>
+<br>
+**`intercept` = 0,5**
+<img src="img/gradient_descent/regression_3.png"/>
+<br>
+**`intercept` = 0,9**
+<img src="img/gradient_descent/regression_4.png"/>
+<br>
+**`intercept` = 1**
+<img src="img/gradient_descent/regression_5.png"/>
+**`intercept` = 1,3**
+<img src="img/gradient_descent/regression_6.png"/>
+**`intercept` = 1,5**
   <img src="img/gradient_descent/regression_7.png"/>
+**`intercept` = 1,85**
   <img src="img/gradient_descent/regression_8.png"/>
 
 
+### Calcul de la dérivée partielle
+À chaque itération de la descente de gradient :
 
+1. **Calcul du carré des résidus**
+calcule l'erreur pour chaque observation du jeu d'entraînement
+On aditionne le carré de l'erreur de chaque observation
+
+2. **Calcul de la Mean Square Residual (MSR)** : On fait la moyenne de ces carrés des résidus pour l'ensemble du jeu d'entraînement. ( la moyenne des erreurs quadratiques).
+
+3. **Calcul des dérivées partielles** : Ensuite, on calcule les dérivées partielles de la **MSR** par rapport aux paramètres du modèle
+Ces dérivées nous indiquent dans quelle direction et de combien chaque paramètre doit être ajusté pour minimiser l'erreur.
+On ajuste simultanément tous les paramètres pendant chaque itération de la descente de gradient.
+
+La dérivée partielle de la **MSR** par rapport à \(a\) ou \(b\) nous dit comment ajuster ces paramètres pour réduire l'erreur du modèle.
+
+Ainsi, en calculant les dérivées partielles pour chaque paramètre, nous savons comment modifier progressivement les valeurs de \(a\) et \(b\) pour "descendre" le long de la pente du gradient et minimiser la **MSR**. Ce processus continue jusqu'à ce que l'erreur soit aussi faible que possible, indiquant que nous avons trouvé les paramètres optimaux pour le modèle.
 
 
 <br>
@@ -534,104 +611,5 @@ La fonction de coût MSE est convexe, elle à donc un minimum global, pas de min
 <font color ="orange">Pour une descente de gradient, toutes les variables doivent avoir la même echelle, sinon la convergence sera plus lente</font>
 
 ![Avec et sans normalisation des variable](img/gd_normalize.png)
-
-
-
-
-## Fonction de coût MSE pour le modèle de régression linéaire
-
-Voir la [fonction de coût](#regression-lineaire.md) du modèle de regression linéaire
-
-Peut s'écrire de plusieurs manières :<br>
-$MSE(X, h_\theta)$, pour montrer que le modèle est paramétré par le vecteur $\theta$<br>$MSE(X, h)$<br>
-$MSE(\theta)$ pour simplifier
-$$
-MSE(X, h_\theta) = \frac{1}{m} \sum_{i=1}^{m} \left( \theta^T x^{(i)} - y^{(i)} \right)^2
-$$
-
-S'écrit aussi
-
-$$J(\theta) = \frac{1}{m} \sum_{i=1}^{m} \left( h_\theta(x^{(i)}) - y^{(i)} \right)^2$$
-
-
-|symbole|signification|
-|:--:|:--------|
-|$m$ | nombre total d'exemples dans l'ensemble d'entraînement.|
-|$𝑥(𝑖)$  | vecteur des caractéristiques de l'exemple 𝑖|
-|$𝜃$ | vecteur des paramètres du modèle.|
-|$𝜃𝑇𝑥(𝑖)$ <font color = "orange">ou</font> $h (x^{(i)})$ | prédiction du modèle pour $𝑥(𝑖)$|
-|$y(i)$|valeur réelle associée à $𝑥_i$|
-|$ (\theta^T x^{(i)} - y^{(i)})^2 $|erreur quadratique pour un exemple donné|
-<br>
-<br>
-
-## Dérivée partielle par rapport à un paramètre $\theta_j$
-
-$$\frac{\partial J(\theta)}{\partial \theta_j} = \frac{1}{m} \sum_{i=1}^{m} \left( h_\theta(x^{(i)}) - y^{(i)} \right) x_j^{(i)}$$
-
-<br>
-
-
-
-## Dérivée partielle
-On note $ℎ𝜃(x^{(  i)})=𝜃^𝑇𝑥^{(𝑖)}$<br><br>
-Donc la dérivée partielle du MSE par rapport à $\theta_j$  est :
-
-
-$$
-\frac{\partial MSE}{\partial \theta_j} = \frac{1}{m} \sum_{i=1}^{m}2 \left( \theta^T x^{(i)} - y^{(i)} \right) x_j^{(i)}
-$$
-
-Dérivée partielle par rapport à $\theta_j$ simplifiée
-
-$$
-\frac{\partial MSE}{\partial \theta_j} = \frac{2}{m} \sum_{i=1}^{m} \left( \theta^T x^{(i)} - y^{(i)} \right) x_j^{(i)}
-$$
-
-
-
-
-| Symbole               | Signification |
-|-----------------------|--------------|
-| $MSE(X, h_\theta) $  | Erreur quadratique moyenne (Mean Squared Error) |
-| $\theta $        | Vecteur des paramètres du modèle |
-| $\theta_j $      | $j $-ième paramètre du modèle |
-| $\theta^T x^{(i)} $ | Produit scalaire entre $\theta $ et $x^{(i)} $, soit la prédiction du modèle |
-| $m $            | Nombre total d'exemples d'entraînement |
-| $x^{(i)} $      | Vecteur des caractéristiques de l'exemple $i $ |
-| $x_j^{(i)} $    | $j $-ième caractéristique de l'exemple $i $ |
-| $y^{(i)} $      | Valeur réelle de sortie pour l'exemple $i $ |
-| $h_\theta(x^{(i)}) $ | Prédiction du modèle pour l'exemple $i $ (équivalent à $\theta^T x^{(i)} $) |
-| $\alpha $      | Taux d'apprentissage (learning rate) |
-
-<br>
-<br>
-
----
-### Vecteur Gradient du MSE
-
-Pour calculer
-**Vecteur Gradient du MSE**
-$$
-\nabla_\theta MSE = \frac{2}{m} X^T (X\theta - y)
-$$
-
-
-
-
-| Symbole                    | Signification |
-|----------------------------|--------------|
-| $ \nabla_\theta MSE $      | Gradient du MSE (vecteur des dérivées partielles) |
-| $ X $                      | Matrice des caractéristiques de taille $ m \times n $ |
-| $ y $                      | Vecteur des valeurs réelles de taille $ m \times 1 $ |
-| $ \theta $                 | Vecteur des paramètres du modèle de taille $ n \times 1 $ |
-| $ X\theta $                | Prédictions du modèle (produit matriciel) de taille $ m \times 1 $ |
-| $ X^T $                    | Transposée de la matrice $ X $, de taille $ n \times m $ |
-| $ X^T (X\theta - y) $      | Gradient du MSE avant multiplication par $ \frac{2}{m} $ |
-| $ \alpha $                 | Taux d'apprentissage (learning rate) |
-
-
-<br>
-[Retour à l'index](#contexte-du-projet)
 
 
