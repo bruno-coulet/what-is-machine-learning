@@ -493,6 +493,36 @@ L'idée générale est de <font color="orange">corriger petit à petit les param
 3. en fonction du pas : hyperparamètre `learning_rate`
 </font>
 
+
+<br>
+
+**Par exemple : Une fonction de type `y  = aX + b`**
+
+<br>
+prediction y  = la pente . X + intercept
+<br>
+Si on connait la pente, pente = 0,64<br><br>
+Prenons aléatoirement `b` ou `intercept` = `0`<br>
+Cela permet de tracer une ligne qui passe par `0`<br>
+Puis de caluler le carré des écarts entre les valeurs cible du jeux d'entrainement et les valeur de la ligne
+  <img src="img/gradient_descent/regression_1.png"/>
+On répète l'opération avec `intercept`=`0,25`
+  <img src="img/gradient_descent/regression_2.png"/>
+`intercept`=`0,5`
+  <img src="img/gradient_descent/regression_3.png"/>
+`intercept`=`0,9`
+  <img src="img/gradient_descent/regression_4.png"/>
+`intercept`=`1`
+  <img src="img/gradient_descent/regression_5.png"/>
+`intercept`=`1,3`
+  <img src="img/gradient_descent/regression_6.png"/>
+  <img src="img/gradient_descent/regression_7.png"/>
+  <img src="img/gradient_descent/regression_8.png"/>
+
+
+
+
+
 <br>
 
 **Différent pas (taux d'apprentissage) d'une descente de gradient de fonction convexe, , comme la focntion MSE**
