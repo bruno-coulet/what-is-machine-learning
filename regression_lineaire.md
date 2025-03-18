@@ -33,13 +33,23 @@ La qualité de cette approximation est mesurée à l'aide de la fonction de coû
 ### Fonction de coût MSE pour le modèle de régression linéaire
 
 
-$$
+$$\boxed{
 MSE(X, h_\theta) = \frac{1}{m} \sum_{i=1}^{m} \left( \theta^T x^{(i)} - y^{(i)} \right)^2
-$$
+}$$
 
 $(X, h_\theta)$ pour montrer que le modèle est paramétré par le vecteur $\theta$<br><br>
-Peut s'écrire de plusieurs manières :<br>
-$MSE(X, h_\theta)$<br>$MSE(X, h)$ comme pour la RMSE ci-dessous<br>$MSE(\theta)$ pour simplifier
+Peut s'écrire de plusieurs manières :
+
+$$
+\boxed{
+\begin{array}{l}
+MSE(X, h_\theta) \\
+MSE(X, h) \quad \text{comme pour la RMSE ci-dessous} \\
+MSE(\theta) \quad \text{pour simplifier}
+\end{array}
+}
+$$
+
 
 |symbole|signification|
 |:--:|:--------|
@@ -54,7 +64,7 @@ $MSE(X, h_\theta)$<br>$MSE(X, h)$ comme pour la RMSE ci-dessous<br>$MSE(\theta)$
 
 ### Fonction de coût RMSE pour le modèle de régression linéaire
 
-$$ RMSE(X, h) = \sqrt{\frac{1}{m} \sum_{i=1}^{m} \left( h (x^{(i)}) - y^{(i)} \right)^2} $$
+$$\boxed{ RMSE(X, h) = \sqrt{\frac{1}{m} \sum_{i=1}^{m} \left( h (x^{(i)}) - y^{(i)} \right)^2} }$$
 
 
 
@@ -69,8 +79,8 @@ $$ \hat{\theta} = (X^T X)^{-1} X^T y $$
 
 | Description                            | Formule |
 |----------------------------------------|---------|
-| **Fonction de coût MSE** pour la régression linéaire | $ MSE(X, h_\theta) = \frac{1}{m} \sum_{i=1}^{m} \left( \theta^T x^{(i)} - y^{(i)} \right)^2 $ |
-| **Fonction de coût RMSE** (Racine de MSE) | $ RMSE(X, h_\theta) = \sqrt{\frac{1}{m} \sum_{i=1}^{m} \left( \theta^T x^{(i)} - y^{(i)} \right)^2} $ |
+| **Fonction de coût MSE** pour la régression linéaire | $\displaystyle MSE(X, h_\theta) = \frac{1}{m} \sum_{i=1}^{m} \left( \theta^T x^{(i)} - y^{(i)} \right)^2 $ |
+| **Fonction de coût RMSE** (Racine de MSE) | $\displaystyle RMSE(X, h_\theta) = \sqrt{\frac{1}{m} \sum_{i=1}^{m} \left( \theta^T x^{(i)} - y^{(i)} \right)^2} $ |
 | **Équation normale** pour $\hat{\theta}$ | $ \hat{\theta} = (X^T X)^{-1} X^T y $ |
 
 

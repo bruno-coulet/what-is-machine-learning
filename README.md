@@ -650,10 +650,7 @@ La dérivée partielle de la **MSR** par rapport à \(a\) ou \(b\) nous dit comm
 
 Ainsi, en calculant les dérivées partielles pour chaque paramètre, nous savons comment modifier progressivement les valeurs de \(a\) et \(b\) pour "descendre" le long de la pente du gradient et minimiser la **MSR**. Ce processus continue jusqu'à ce que l'erreur soit aussi faible que possible, indiquant que nous avons trouvé les paramètres optimaux pour le modèle.
 
-
 <br>
-
-
 
 <font color ="orange">Pour une descente de gradient, toutes les variables doivent avoir la même echelle, sinon la convergence sera plus lente</font>
 
