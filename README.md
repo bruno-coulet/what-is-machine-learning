@@ -536,38 +536,67 @@ C'est aussi une fonction continue, sa pente ne varie jamais abruptement.
 
 
 ## Descente de gradient
-Ou **Gradient Descent** en anglais **GD**
 
-Méthode d'entrainement d'un modèle de regression linéaire par **optimisation itérative**
-Consiste en une modification graduelle du paramêtre du modèle pour diminuer la fonction de coût sur le jeu d'entrainement
+La descente de gradient (*Gradient Descent*) est une méthode d'entraînement utilisée pour optimiser les modèles de **régression linéaire** et d'autres algorithmes d'apprentissage automatique.  
 
-Il existe plusieurs variantes :
-- Descente de gradient groupée (batch)
-- Descente de gradient par mini-lots
-- Descente de gradient stochastique
+#### **Principe : Correction progressive des paramètres**  
+L'objectif est de mettre à jour les paramètres \( \theta \) du modèle afin de **réduire la valeur de la fonction coût** sur le jeu d'entraînement.  
+Pour ce faire, on ajuste progressivement et simultanément les paramètres en **suivant la direction opposée au gradient** de la fonction coût.  
 
-<br>
-
-La descente de gradient calcule le gradient de la fonction coût au point $\theta$, puis progresse en direction du gradient descendant.
-
-L'idée générale est de <font color="orange">corriger petit à petit les paramètres pour minimiser la fonction de coût</font>
-
-S'il y à plusieurs paramètres, il y a plusieurs dérivées pour la même fonction. On appele alors ces dérivées des gradients
-
-
-1. calcul le gradient de la fonction coût au point $\theta$ aléatoire
-2. progresse en direction du gradient descendant
-3. en fonction du pas : hyperparamètre `learning_rate`
-
-
-
-Le **résiduel** est la différence entre la valeur réelle (target) d'une observation et la valeur prédite par le modèle.
-**SSR** = somme des résidus pour un modèle donné (c'est ce qu'on visualise ci-dessous).
+<div style="border: 1px solid black; padding: 10px;">
+Il existe plusieurs types de descente de gradient :<br>
+<ul>
+<li><strong>batch (Batch Gradient Descent)</strong><br>mise à jour des paramètres après avoir calculé le gradient sur **l’ensemble** des données d'entraînement.</li>
+<li><strong>par mini-lots (Mini-Batch Gradient Descent)</strong><br> mise à jour après calcul du gradient sur un **sous-ensemble** aléatoire (mini-lot) de données.</li>
+<li><strong>stochastique (Stochastic Gradient Descent, SGD)</strong><br> mise à jour après chaque **exemple individuel**, ce qui introduit plus de bruit mais peut accélérer l’apprentissage.</li>
+</ul>  </div>
 
 <br>
 
-### Etapes de la descente de gradient
-Pour une descente de gradient appliquée à une fonction de type **y = aX + b**  
+
+Calcule le gradient de la fonction coût au point $\theta$
+Met à jour les paramètres en **se déplaçant dans la direction opposée au gradient** pour minimiser cette fonction.
+
+**Le gradient** est une dérivée partielle de la fonction coût par rapport aux paramètres $\theta$, indiquant la direction de la plus forte augmentation.
+
+**vecteur gradient** : lorsqu'il y a plusieurs paramètres
+on calcule la **dérivée partielle** de la fonction coût de chaque paramètre.
+On appelle ces dérivées des gradients
+
+**La descente de gradient** calcule le gradient de la fonction coût au point $\theta_i$, puis progresse dans la direction opposée au gradient.
+
+
+Pour minimiser la fonction coût, on se déplace dans la direction opposée au gradient.
+
+
+
+- **Gradient** : c'est la **dérivée partielle** de la fonction coût par rapport à un paramètre \( \theta \), indiquant la **direction de la plus forte augmentation**.  
+- **Vecteur gradient** : lorsque plusieurs paramètres sont présents, la fonction coût dépend de plusieurs variables.  
+  - On calcule alors les **dérivées partielles** de la fonction coût pour chaque paramètre.  
+  - L’ensemble de ces dérivées forme un **vecteur gradient**, qui est utilisé pour ajuster tous les paramètres simultanément.  
+
+---
+### **Étapes de la descente de gradient** :
+1. Calcul du **gradient de la fonction coût** au point $\theta$, choisi initialement (souvent aléatoirement).  
+2. progression en direction du gradient descendant en fonction du pas : hyperparamètre `learning_rate`
+Mise à jour des paramètres en suivant la règle : 
+
+   $$\theta \leftarrow \theta - \text{learning rate} \times \nabla J(\theta)$$
+
+  |||
+  |-|-|
+  |$\nabla J(\theta)$ |gradient de la fonction coût |
+  |`learning_rate` | **hyperparamètre** qui contrôle la vitesse d'apprentissage.|
+
+3. Répétition du processus jusqu'à convergence,<br> **lorsque la variation de la fonction coût devient négligeable**<br>ou qu'un nombre maximal d'itérations est atteint.
+ ---
+
+
+### Exemple d'une descente de gradient
+- Pour une descente de gradient appliquée à une fonction de type **y = aX + b**
+- **Fonction de coût :**
+Le résiduel est la différence entre la valeur réelle (target) d'une observation et la valeur prédite par le modèle.
+**SSR** = somme des résidus pour un modèle donné (c'est ce qu'on visualise ci-dessous). 
 
 #### 1️⃣ Initialisation des paramètres  
 - Choisir des valeurs initiales pour **a** et **b** (souvent aléatoires ou à zéro).  
