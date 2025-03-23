@@ -1,8 +1,6 @@
 # what-is-machine-learning
 
-## Contexte du projet
-Travail personnel de recherches et de documentation pour la définition des éléments suivants :
-
+## Recherches et documentation
 
 1. [Science des données](#science-des-données)
 2. [Apprentissage automatique ](#apprentissage-automatique)
@@ -21,15 +19,16 @@ Travail personnel de recherches et de documentation pour la définition des él�
 ## Sources
 <div class="encadre">
 
-   - Machine learning avec Scikit-Learn
-   de Aurélien Géron aux editions Dunod O'reilly
+   - **Machine learning avec Scikit-Learn**
+   Aurélien Géron, editions Dunod O'reilly
    2017
-   - Machine learning : les fondamentaux : exploiter des données structurées en Python
-   de Harrison Matt aux éditions O'Reilly Media
+   - **Machine learning : les fondamentaux**<br> *Exploiter des données structurées en Python*
+   Harrison Matt, éditions O'Reilly Media
    2020
    - [StatQuest](https://statquest.org/video-index/) et sa [chaîne youtube](https://www.youtube.com/watch?v=fSytzGwwBVw&list=PLblh5JKOoLUICTaGLRoHQDuF_7q2GfuJF&index=3)
+   - [MachineLearnia](https://www.machinelearnia.com/) et sa [chaîne youtube](https://www.youtube.com/@MachineLearnia)
    - [Datatab.fr](https://datatab.fr/tutorial/regression)
-   - math.univ-angers.fr/labatte/enseignement/master/classificationsupervisee.pdf
+   - [Université d'Angers](math.univ-angers.fr/labatte/enseignement/master/classificationsupervisee.pdf)
    - [IBM](https://www.ibm.com/fr-fr/topics/machine-learning)
    - [CNIL](https://www.cnil.fr/fr/definition/apprentissage-automatique)
    - [ekinox.io](https://blog.ekinox.io/ml/normalisation-series-temporelles)
@@ -42,7 +41,7 @@ Ou comment générer du sens à partir de données - *Faire parler les données*
 <p align="center">
 <img src="img/dataScience.png" alt="data_science">
 </p>
-Considérée comme un nom alternatif pour les statistiques dans les années 60, la science des données devient une discipline issue de l'informatique à la fin des années 90.
+Considérée comme un nom alternatif pour les statistiques dans les années 60, la science des données devient une discipline à part entière à la fin des années 90 avec le boom de l'informatique.<br>
 <br>
 Elle s'articule autour de la donnée :
 
@@ -88,16 +87,15 @@ Prédit une valeur numérique **cible (target)** à partir des valeurs **caract�
 **exemple :** prédire le prix d'une voiture en fonction de son age, de son kilométrage, etc...
 
 ### Terminologie :
+|||
+|-|-|
+|**attribut**| type de donnée *kilométrage*|
+|**caractéristique** ou <br> **variable explicative**| un attribut et sa valeur *kilométrage = 58 000 km*|
+|**variable à expliquer**| étiquette
+ |**intercept** <br> **$\theta_0 $** <br> **terme constant**|dans une équation de régression linéaire <br> valeur de la variable à expliquer lorsque toutes les variables explicatives sont égales à zéro. <br> Point d'intersection avec l'axe des ordonnées.|
+|**biais**| synonyme d'intercept dans les modèles de régression. Il représente l'ajustement constant nécessaire pour mieux prédire la variable à expliquer, indépendamment des variables explicatives. Dans un modèle d'apprentissage automatique, c'est la valeur qui est ajoutée avant d'appliquer les coefficients aux variables explicatives.|
 
-
-**variable explicative :** caractéristique
-**caractéristique :** un attribut et sa valeur (ex: kilométrage = 58 000 km)
-**variable à expliquer :** étiquette
-**attribut :** type de donnée (ex: kilométrage)
- **intercept** : dans une équation de régression linéaire, c'est le terme constant ($ \theta_0 $), représentant la valeur de la variable à expliquer lorsque toutes les variables explicatives sont égales à zéro. C'est le point d'intersection avec l'axe des ordonnées.
-**biais** : synonyme d'intercept dans les modèles de régression. Il représente l'ajustement constant nécessaire pour mieux prédire la variable à expliquer, indépendamment des variables explicatives. Dans un modèle d'apprentissage automatique, c'est la valeur qui est ajoutée avant d'appliquer les coefficients aux variables explicatives.
-
-Intercept et biais sont souvent utilisés de manière interchangeable, en particulier dans le contexte de modèles de régression, où le biais ajuste la sortie avant d'appliquer les coefficients aux variables explicatives.
+**Intercept et biais** sont souvent utilisés de manière interchangeable, en particulier dans le contexte de modèles de régression, où le biais ajuste la sortie avant d'appliquer les coefficients aux variables explicatives.
 
 
 [Retour à l'index](#contexte-du-projet)
@@ -107,7 +105,7 @@ Intercept et biais sont souvent utilisés de manière interchangeable, en partic
 <p align="center">
    <img src ="img/deep_learning.png" alt ="deep learning">
 </p>
-Procédé d’apprentissage automatique utilisant des [réseaux de neurones](reseaux_neurones.md)
+Procédé d’apprentissage automatique utilisant des [réseaux de neurones](./reseaux_neurones.md)
 
 
  composé de nombreuses couches cachées et des algorithmes avec de très nombreux paramètres.
@@ -138,7 +136,6 @@ L'objectif de l'algorithme est d'apprendre à faire correspondre les entrées au
 <p align="center">
   <img src="img/apprentissage_supervise.png" alt="apprantissage supervisé">
 </p>
-
 
 [Retour à l'index](#contexte-du-projet)
 
@@ -226,26 +223,102 @@ L'objectif est d'**identifier des structures** cachées **ou des regroupements n
 <br>
 [Retour à l'index](#contexte-du-projet)
 <br>
+
+
 ## Régression
 
 En mathématiques, la régression recouvre plusieurs méthodes d’analyse statistique permettant d’approcher une variable à partir d’autres qui lui sont corrélées.
 
+
+#### **1. [Régression Linéaire](#regression-lineaire)**
+- Suppose une relation linéaire entre les variables.  
+- Exemple : Prédire le prix d’une maison en fonction de sa surface.
+
+#### **2. Régression Polynomiale**
+- Extension de la régression linéaire 
+- permet de modéliser des relation non linéaires en attribuant des puissances aux variables indépendantes.
+- Elle utilise plus de paramètres, ce qui la rend plus flexible, mais également plus sujette au surajustement (overfitting).
+
+#### **3. Régression Logistique**  
+- Pour des problèmes de **classification binaire** (oui/non, 0/1, vrai/faux).  
+- La sortie est une probabilité, utilis une fonction logistique (sigmoïde).  
+- Exemple : Prédire si un email est spam ou non.
+
+**Variantes :**
+- **Régression Logistique Multinomiale** : Pour plus de deux classes.  
+- **Régression Logistique Ordinale** : Pour des classes ordonnées (ex : satisfaction client : "faible", "moyenne", "élevée").  
+
+
+#### **4. Régression Ridge et Lasso**
+- **Ridge Regression** : Ajoute une pénalité sur les coefficients (régularisation L2) pour éviter le surapprentissage.  
+- **Lasso Regression** : Régularisation L1 qui met certains coefficients à zéro (sélection de variables).  
+- **ElasticNet** : Combinaison de Ridge et Lasso.
+
+
+#### **5. Régression des Moindres Carrés Ponderés (WLS)**
+- Variante de la régression linéaire où certaines observations ont plus de poids que d'autres.  
+- Utilisée lorsque la variance des erreurs n'est pas constante (hétéroscédasticité).  
+
+
+#### **6. Régression Quantile**
+- Au lieu de prédire la moyenne des valeurs cibles, elle prédit un quantile donné (ex : médiane).  
+- Utile lorsque les données contiennent beaucoup de valeurs extrêmes (outliers).  
+
+
+#### **7. Régression Poisson**
+- Utilisée lorsque la variable cible est un **compte** (nombre d'événements).  
+- Exemple : Nombre de clients arrivant dans un magasin par heure.
+
+#### **8. Régression Probit et Tobit**
+- **Probit** : Alternative à la régression logistique pour des probabilités.  
+- **Tobit** : Utilisée lorsque la variable cible est tronquée (ex : des salaires ne pouvant pas être négatifs).  
+
+
+#### **9. Régression PLS (Partial Least Squares)**
+- Variante de la régression linéaire utilisée quand les variables explicatives sont fortement corrélées.  
+
+
+#### **10. Régression Support Vector Regression (SVR)**
+- Basée sur les **machines à vecteurs de support (SVM)**.  
+- Gère bien les données non linéaires et les valeurs aberrantes.  
+
+
+#### **11. Régression avec Réseaux de Neurones (NN)**
+- Utilise des architectures de deep learning pour modéliser des relations complexes.  
+- Exemple : Réseaux de neurones profonds pour la prévision boursière.  
+
+
+#### **12. Régression Bayésienne**
+- Intègre une approche probabiliste et des distributions de probabilité sur les paramètres du modèle.  
+- Exemple : Utilisé en médecine pour estimer des risques individuels.  
+
+|||
+|-|-| 
+|**Données continues** | Régression linéaire, polynomiale, Ridge, Lasso, PLS, SVR, NN, Bayésienne| 
+|**Données discrètes (comptage)** | Régression Poisson|
+|**Classification binaire/multiclasse** | Régression logistique, probit|  
+|**Données avec outliers** | Régression quantile|  
+|**Corrélation entre variables explicatives** | Régression PLS, Ridge|  
+
+
 #### Régression linéaire  {#regression-lineaire}
-méthode de modélisation de la **relation entre une ou plusieurs variables indépendantes X (en entrée) et une variable dépendante y (en sortie)** par une droite.
-
-Un modèle linéaire effectue une prédiction en calculant une somme pondérée de variables d'entrée en y ajoutant un terme constant (intercept)
-
-**Autrement dit :** y est une combinaison linéaire des features 𝑋 et un terme d'erreur qui introduit des imprécisions ou de la variabilité.
 
 [notebook regression_lineaire](regression.ipynb)
 
-**prédiction =  somme pondérée des variables d'entrée plus une constante**
-c'est à dire :
-|forme scalaire|forme de somme pondérée|
-|:--:|:--:|
-|$\hat{y} = \theta_1 x_1 + \theta_2 x_2 + \dots + \theta_n x_n + \theta_0$|$\hat{y} = \sum_{i=0}^{n} \theta_i x_i$|
+Modélisation  par une droite de la **relation** entre une/des **variables indépendantes X** en entrée, et une **variable dépendante y** en sortie.
 
-²<br>
+Le modèle linéaire effectue une **prédiction `y`** en calculant une somme pondérée de variables d'entrée `X` et ajoute un **terme constant (intercept) $\theta_0$** sans pondération
+
+`y` est une combinaison linéaire des features `X` et d'un terme d'erreur qui introduit des imprécisions ou de la variabilité.
+
+
+
+||forme scalaire|forme de somme pondérée|
+|-|:--:|:--:|
+|$\hat{y} = $|$\theta_1 x_1 + \dots + \theta_n x_n + \theta_0$|$\sum_{i=0}^{n} \theta_i x_i$|
+
+
+<br>
 
 |symbole|signification|
 |:--:|:--:|
@@ -253,18 +326,10 @@ c'est à dire :
 |$n$ | nombre de variables|
 |$\theta_i$ | paramètre du modèle, coefficient|
 |$x_i$ | variable explicative|
-|$\theta_0$|	Biais (intercept, constante), valeur de $𝑦$ lorsque toutes les variables $𝑥_𝑖$ sont égales à zéro|
+|$\theta_0$|	Biais/intercept/constante qui n'est pas pondérée <br> Valeur de `y` lorsque toutes les variables $𝑥_𝑖$ sont égales à zéro|
 
 Peut aussi s'écrire sous forme [vectorielle ou matricielle](regression_lineaire.md)
 
-
-
-#### Régression polynomiale
-permet de s'ajuster à des jeux de données non linéaires en introduisant des puissances des variables indépendantes. Elle utilise plus de paramètres, ce qui la rend plus flexible, mais également plus sujette au surajustement (overfitting).
-#### Régression logistique
-utilisée pour des problèmes de classification binaire, elle permet de prédire la probabilité d'appartenance à une classe en utilisant une fonction logistique (sigmoïde).
-#### Régression softmax
-une généralisation de la régression logistique utilisée pour les problèmes de classification multiclasse, qui permet de prédire les probabilités d'appartenance à plusieurs classes.
 <br>
 [Retour à l'index](#contexte-du-projet)
 <br>
@@ -296,12 +361,12 @@ Nécessite l'utilisation d'une [fonction de fitness](#fonction-de-coût)
 
 #### Validation croisée avec un dataset divisé en 4 sous ensemble :
 
-|itération | entrainement | test| résultats|
+|itération | <font color="blue">entrainement</font> | <font color="orange">test</font>| résultats|
 |:------:|:-------------:|:--------------:|:---------------:|
-|**1**|![train_4](img/cross_validation_train_4.png) |  ![test_4](img/cross_validation_test_4.png)|![track_4](img/cross_validation_track_4.png)|
-|**2** | entrainement avec les autres tranches|test avec la tranche 2|![track_3](img/cross_validation_track_3.png)|
-|**3** | entrainement avec les autres tranches|test avec la tranche 3|![track_2](img/cross_validation_track_2.png)|
-|**4** | entrainement avec les autres tranches|test avec la tranche 4|![track_1](img/cross_validation_track_1.png)|
+|**1**|![train_4](img/cross_validation_train_4.png)<font color="blue">tranches 2, 3 et 4</font>|  ![test_4](img/cross_validation_test_4.png)<font color="orange">tranche 1</font>|![track_4](img/cross_validation_track_4.png)|
+|**2** | <font color="blue">tranches 1, 3 et 4</font>|<font color="orange">tranche 2</font>|![track_3](img/cross_validation_track_3.png)|
+|**3** | <font color="blue">tranches 1, 2 et 4</font>|<font color="orange">tranche 3</font>|![track_2](img/cross_validation_track_2.png)|
+|**4** | <font color="blue">tranches 1, 2 et 3</font>|<font color="orange">tranche 4</font>|![track_1](img/cross_validation_track_1.png)|
 
 
 
@@ -325,9 +390,9 @@ Dans un projet de Machine Learnig, il faut séparer les données :
 3. un dernier jeux de **validation** pour optimiser le modèle et prévenir le surajustement.  **affiner et optimiser le modèle.**
    (avec de nouvelles données)
  
-Ces trois étapes – entraînement, test et validation – sont essentielles pour garantir que le modèle est fiable et performant avant son déploiement.
+Ces trois étapes – **entraînement**, **test** et **validation** – sont essentielles pour garantir que le modèle est fiable et performant avant son déploiement.
 
-Après les phase de collecte, de nettoyage et de préparation des données :
+Après les phases de collecte, de nettoyage et de préparation des données :
 - recherche de correlations entre les variables
 - gestion des variables quantitative (stratification, normalisation, ...)
 - gestion des variables qualitative (encodage, onehot encoding, ...)
@@ -581,22 +646,12 @@ Si :
 
 <font color="green">Graphe de gauche</font>, `y` = 0.25 pour `x`= 0
 <font color="red">Graphe de droite</font>, `x` = 0.25, `y` = somme des `residual`
-<img src="img/gradient_descent/regression_2.png"/>
-<br>
-**`intercept` = 0,5**
-<img src="img/gradient_descent/regression_3.png"/>
-<br>
-**`intercept` = 0,9**
-<img src="img/gradient_descent/regression_4.png"/>
-<br>
-**`intercept` = 1**
-<img src="img/gradient_descent/regression_5.png"/>
-**`intercept` = 1,3**
-<img src="img/gradient_descent/regression_6.png"/>
-**`intercept` = 1,5**
-  <img src="img/gradient_descent/regression_7.png"/>
-**`intercept` = 1,85**
-  <img src="img/gradient_descent/regression_8.png"/>
+|||
+|-|-|
+|**`intercept`** = intersection de  la droite avec l'axe des ordonnées<br>`y` pour `x` = 0|**`intercept` = 0,3**<img src="img/gradient_descent/regression_2.png"/>|
+|**`intercept` = 0,5**><img src="img/gradient_descent/regression_3.png"/>|**`intercept` = 0,9**<br><img src="img/gradient_descent/regression_4.png"/>|
+|**`intercept` = 1**<img src="img/gradient_descent/regression_5.png"/>|**`intercept` = 1,3**<br><img src="img/gradient_descent/regression_6.png"/>|
+|**`intercept` = 1,5**<img src="img/gradient_descent/regression_7.png"/>|**`intercept` = 1,85**<br>  <img src="img/gradient_descent/regression_8.png"/>|
 
 
 ### Sur tous les paramètres simultanément
