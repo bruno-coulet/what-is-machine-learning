@@ -44,9 +44,10 @@
 |:--------------------|:--|
 |**attribut**| type de donnée ( ex : *kilométrage* )|
 |**caractéristique**<br><font color="orange">Feature</font><br> **variable explicative**| un attribut **et** sa valeur ( ex : *kilométrage = 58 000 km )*|
-|**variable à expliquer**<br><font color="orange">Target</font>| étiquette
- |**intercept** <br> **$\theta_0 $** <br> **terme constant**|dans une équation de régression linéaire <br> valeur de la variable à expliquer lorsque toutes les variables explicatives sont égales à zéro. <br> Point d'intersection avec l'axe des ordonnées.|
-|**biais**| synonyme d'intercept dans les modèles de régression. Il représente l'ajustement constant nécessaire pour mieux prédire la variable à expliquer, indépendamment des variables explicatives. Dans un modèle d'apprentissage automatique, c'est la valeur qui est ajoutée avant d'appliquer les coefficients aux variables explicatives.|
+|**variable à expliquer**<br><font color="orange">Target</font>| étiquette|
+|**variable qualitative**|Aussi appelé **variable catégorielle**<br>Ne peut prendre qu'un nombre fini de valeurs, appelées **modalitées**<br>|
+|**intercept** <br> **$\theta_0 $** <br> **terme constant**|dans une équation de régression linéaire <br> valeur de la variable à expliquer lorsque toutes les variables explicatives sont égales à zéro. <br> Point d'intersection avec l'axe des ordonnées.|
+|**biais**| synonyme d'intercept dans les modèles de régression.<br> Représente l'ajustement constant nécessaire pour mieux prédire la variable à expliquer, indépendamment des variables explicatives.<br> Dans un modèle d'apprentissage automatique, c'est la valeur qui est ajoutée avant d'appliquer les coefficients aux variables explicatives.|
 |**hyperparamètre**|paramètre de l'algorithme d'apprentissage (et non du modèle)<br>Permet de contrôler le niveau de **régularisation** durant l'apprentissage (il doit être défini avant, et rester constant)|
 
 **Intercept et biais** sont souvent utilisés de manière interchangeable, en particulier dans le contexte de modèles de régression, où le biais ajuste la sortie avant d'appliquer les coefficients aux variables explicatives.
@@ -99,15 +100,23 @@ On considère qu'un ordinateur "apprend" s'il améliore sa **[performance](#fonc
 
 
 
-Il existe 2 grandes familles d'apprentissage automatique :
-#### La classification - prédire des classes
+### Il existe 2 grandes familles d'apprentissage automatique :
+#### <font color="orange">La classification</font> - prédire des classes
 Prédire une catégorie ou une étiquette à partir des caractéristiques des données d'entrée.
 **exemple :**  filtre de spam à partir d'e-mail accompagnés de leur classe (normal/spam) 
 
-#### La régression - prédire des valeurs
+#### <font color="orange">La régression</font> - prédire des valeurs
 Prédit une valeur numérique **cible (target)** à partir des valeurs **caractéristiques (feature)** d'attributs ou de variables d'une observation
 
 **exemple :** prédire le prix d'une voiture en fonction de son age, de son kilométrage, etc...
+
+### Mode de généralisation
+On peut aussi catégoriser les système de machine learning selon leur mode de généralisation  :
+<font color="orange">Apprentissage à partir d'observation</font> - **Instance based learning**<br> Le système généralise à de nouveaux cas en utilisant une mesure de similarité
+
+<font color="orange">Apprentissage à partir d'un modèle</font> <br>
+Construit un modèle à partir des exemples.
+Ce modèle est ensuite utilisé pour les prédictions
 
 
 ## Apprentissage supervisé
@@ -247,6 +256,8 @@ Optimisation itérative qui modifie graduellement les paramètres du modèle pou
 **Converge au final vers le même jeu de paramètres que la méthode analytique**
 
 
+![Ajustement](img/fitting.webp)
+
 #### Surajustement
 <font color="orange">**Overfitting**</font> : le modèle apprend trop bien les détails et le bruit des données d'entraînement, ce qui nuit à sa capacité à généraliser.<br>
 Solutions possible :
@@ -262,6 +273,8 @@ Solutions possible :
 - Choisir un modèle plus puissant, avec plus dde paramètres
 - Fournir dde meilleurs variables à l'algorithme d'apprentissage
 - réduire les contraintes sur le modèle (hyperparamètre de régularisation)
+
+
 
 ### test
 La phase de test consiste à évaluer les performances du modèle sur un ensemble de données qui n'a pas été utilisé pendant l'entraînement.
@@ -312,7 +325,7 @@ Il est courant d'avoir recours à la technique de la [Validation croisée](#vali
 - chaque modèle est entrainé sur une combinaison différente de sous-ensembles
 - chaque modèle est validé sur le sous-ensemble restant
 - Le modèle sélectionné est entrainé sur l'ensemble du jeu d'entrainement
-- il est testé sur le jeu de testé pour mesurer l'erreur de généralisation.
+- il est testé sur le jeu de testé pour mesurer l'erreur de généralisation.c
 
 ## Validation croisée
 Dans un projet de Machine Learnig, il faut séparer les données :
