@@ -153,42 +153,34 @@ Il tente d'organiser les données selon leurs similarités ou différences.
 <br>
 
 ## Classification / Régression
-En apprentissage automatique, on distingue les problèmes de régression des problèmes de classification.
 
-**En règle général :**
+### Classification
+
+Prédiction d'une variable  **qualitative/discrète** 
  
- |Classification|Regression|
- |--------------|----------|
- | prédiction d'une variable  **qualitative/discrète**| prédiction d'une variable **quantitative/continue**|
+### Regression
+ 
+Prédiction d'une variable **quantitative/continue**
 
 
 
 ## Classification supervisée
 
-La classification supervisée est une tâche d’apprentissage supervisé où le modèle apprend à attribuer des catégories ou des labels à de nouvelles données en se basant sur des exemples d’entraînement étiquetés. Par exemple, classer des emails comme spam ou non-spam.
+- **On dispose d'observations déjà classés**
+- **On veut classer une nouvelle observation, lui attribuer une étiquette**
 
-1. **On dispose d'articles déjà classés en rubrique :**
-économie, politique, sport, culture...
+La classification supervisée repose sur des algorithmes qui apprennent, à partir d’un ensemble de données d’entraînement étiquetées, à associer chaque nouvelle observation à l’une des catégories définies.
+
 <p align="center">
   <img src="img/classification_supervise.png" alt="classification supervisée">
 </p>
+Concrètement, le modèle identifie des motifs et des relations entre les variables explicatives (features) et les classes cibles, puis il formalise ces relations sous forme de règles de décision.
 
-2. **On veut classer un nouvel article, lui attribuer une étiquette** 
+Ces règles permettent ainsi de classer automatiquement de nouvelles observations en se basant sur leurs caractéristiques.
+
+Par exemple, un modèle de classification des emails peut apprendre que la présence de certains mots-clés, la fréquence d’envoi ou l’adresse de l’expéditeur sont des critères pertinents pour distinguer un spam d’un email légitime.
 
 
-Définition des règles permettant de classer des objets dans des classes.
-
-Ces règles se basent sur des variables qualitatives ou quantitatives des
-objets à classer.
-
-Les méthodes s'étendent souvent à des variables Y quantitatives (régression).
-
-Un échantillon dont le classement est connu est utilisé pour l'apprentissage des règles de classement.
-
-Il faut ensuite étudier la fiabilité de ces règles pour les comparer et les appliquer.
-Evaluer les cas de sous apprentissage ou de sur apprentissage (complexité du modèle). 
-
-On utilise souvent un deuxième échantillon indépendant, dit de validation ou de test.
 <br>
 [Retour à l'index](#contexte-du-projet)
 <br>
