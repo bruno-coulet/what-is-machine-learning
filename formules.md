@@ -8,8 +8,55 @@
 - [Coefficient de Pearson](#coefficient-de-pearson)
 
 ---
+$$
+\begin{array}{|c|l|}
+\hline
+\textbf{Symbole} & \textbf{Signification} \\
+\hline
+m  & \text{Nombre d'observation du jeu de donnée} \\
+\hline
+\boldsymbol{x}^i & \text{Vecteur  constitué des valeurs de des variables (hors étiquette) pour la ième observation} \\
+\hline
+\boldsymbol{X}  & \text{Matrice contenant toutes les valeurs des toutes les variable (hors étiquette) du jeu de donnée} \\
+\hline
+h & \text{Hypothèse, fonction de prédiction} \\
+\hline
+\hat{y} & \text{y chapeau, valeur prédite, retournée par }h(x^i)\\
+\hline
+T & \text{Transposée}\\
+\hline
+\end{array}
+$$
 
-### Mean Square Residuals
+En algèbre linéaire, par convention, un vecteur est généralement considéré comme un vecteur colonne.
+$$
+\begin{array}{|c|c|}
+\hline
+\textbf{Vecteur } \boldsymbol{x}^i & \textbf{Transposée } (\boldsymbol{x}^i)^T \\
+\hline
+\boldsymbol{x}^i =\begin{pmatrix} -11 \\ 45 \\ 62 \\ 13 \end{pmatrix} & 
+(\boldsymbol{x}^i)^T =\begin{pmatrix} -11 & 45 & 62 & 13 \end{pmatrix} \\
+\hline
+\end{array}
+$$
+
+Matrice $\boldsymbol{X}$, constituée de m vecteurs colonnes, chacun transposé en vecteur ligne
+$$
+\boldsymbol{X} = 
+\begin{pmatrix} (\boldsymbol{x}^1)^T \\ (\boldsymbol{x}^2)^T \\ (\boldsymbol{x}^{...})^T \\ (\boldsymbol{x}^{m})^T \end{pmatrix} =  
+\begin{pmatrix} -11 & 45 & 62 & 13 \\ \cdot & \cdot & \cdot & \cdot \\ \cdot & \cdot & \cdot & \cdot \\ \cdot & \cdot & \cdot & \cdot  \end{pmatrix}
+$$
+
+
+
+
+
+
+
+
+
+
+### Mean Square Residuals - Résidu Quadratique Moyen
 $$
 MSR(\theta) = \frac{1}{m} \sum_{i=1}^{m} (\theta^T x^{(i)} - y^{(i)})^2
 $$
@@ -29,7 +76,7 @@ y^{(i)} & \text{Valeur réelle associée à } x^{(i)} \\
 \end{array}
 $$
 
-### MSE
+### Mean Square Error - Erreure Quadratique moyenne
 **Fonction de coût  pour le modèle de régression linéaire**
 
 Voir la [fonction de coût](#regression-lineaire.md) du modèle de regression linéaire
