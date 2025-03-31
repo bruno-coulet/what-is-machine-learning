@@ -241,7 +241,7 @@ En mathématiques, la régression recouvre plusieurs méthodes d’analyse stati
 
 #### **3. Régression Logistique**  
 - Pour des problèmes de **classification binaire** (oui/non, 0/1, vrai/faux).  
-- La sortie est une probabilité, utilise une fonction logistique (sigmoïde).  
+- La sortie est une probabilité, utilis une fonction logistique (sigmoïde).  
 - Exemple : Prédire si un email est spam ou non.
 
 **Variantes :**
