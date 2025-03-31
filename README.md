@@ -2,18 +2,20 @@
 
 ## Recherches et documentation
 
+0. [Lexique](#Lexique)
 1. [Science des données](#science-des-données)
 2. [Apprentissage automatique ](#apprentissage-automatique)
 3. [Apprentissage supervisé](#apprentissage-supervisé)
 4. [Apprentissage non supervisé](#apprentissage-non-supervisé)
 5. [Classification supervisée](#classification-supervisée)
 6. [Classification non supervisée](#classification-non-supervisée)
-7. [Régression](#régression)
+7. [Données d'entraînement, de test, de validation](#données-dentraînement-de-test-de-validation)
 8. [Validation croisée](#validation-croisée)
-9. [Données d'entraînement, de test, de validation](#données-dentraînement-de-test-de-validation)
-10. [Corrélation linéaire (de pearson) entre deux variables](#corrélation-linéaire-de-pearson-entre-deux-variables)
-11. [Fonction de coût](#fonction-de-coût)
+9. [Corrélation linéaire (de pearson) entre deux variables](#corrélation-linéaire-de-pearson-entre-deux-variables)
+10. [Fonction de coût](#fonction-de-coût)
+11. [Régression](#regression)
 12. [Descente de gradient](#descente-de-gradient)
+13. [Apprentissage profond](#apprentissage-profond)
 
 
 ## Sources
@@ -35,6 +37,25 @@
    - [wikipedia](https://fr.wikipedia.org/wiki/Apprentissage_automatique)
 
 </div>
+
+## Lexique :
+
+|||
+|:--------------------|:--|
+|**attribut**| type de donnée ( ex : *kilométrage* )|
+|**caractéristique**<br><font color="orange">Feature</font><br> **variable explicative**| un attribut **et** sa valeur ( ex : *kilométrage = 58 000 km )*|
+|**variable à expliquer**<br><font color="orange">Target</font>| étiquette|
+|**variable qualitative**|Aussi appelé **variable catégorielle**<br>Ne peut prendre qu'un nombre fini de valeurs, appelées **modalitées**<br>|
+|**intercept** <br> **$\theta_0 $** <br> **terme constant**|dans une équation de régression linéaire <br> valeur de la variable à expliquer lorsque toutes les variables explicatives sont égales à zéro. <br> Point d'intersection avec l'axe des ordonnées.|
+|**biais**| synonyme d'intercept dans les modèles de régression.<br> Représente l'ajustement constant nécessaire pour mieux prédire la variable à expliquer, indépendamment des variables explicatives.<br> Dans un modèle d'apprentissage automatique, c'est la valeur qui est ajoutée avant d'appliquer les coefficients aux variables explicatives.|
+|**hyperparamètre**|paramètre de l'algorithme d'apprentissage (et non du modèle)<br>Permet de contrôler le niveau de **régularisation** durant l'apprentissage (il doit être défini avant, et rester constant)|
+
+**Intercept et biais** sont souvent utilisés de manière interchangeable, en particulier dans le contexte de modèles de régression, où le biais ajuste la sortie avant d'appliquer les coefficients aux variables explicatives.
+
+
+[Retour à l'index](#contexte-du-projet)
+
+
 
 ## Science des données
 Ou comment générer du sens à partir de données - *Faire parler les données*.
@@ -71,59 +92,32 @@ suite logique et proactive de l'analyse prédictive
 <br>
 [Retour à l'index](#contexte-du-projet)
 <br>
+
 ## Apprentissage automatique
 L'art de programmer des ordinateurs de sorte qu'ils puissent apprendre à partir de données
 
 On considère qu'un ordinateur "apprend" s'il améliore sa **[performance](#fonction-de-coût)** lors de l'exécution d'une **tâche** au fur et à mesure de son **expérience**.
 
-Il existe 2 grandes familles d'apprentissage automatique :
-#### La classification - prédire des classes
+
+
+### Il existe 2 grandes familles d'apprentissage automatique :
+#### <font color="orange">La classification</font> - prédire des classes
 Prédire une catégorie ou une étiquette à partir des caractéristiques des données d'entrée.
 **exemple :**  filtre de spam à partir d'e-mail accompagnés de leur classe (normal/spam) 
 
-#### La régression - prédire des valeurs
+#### <font color="orange">La régression</font> - prédire des valeurs
 Prédit une valeur numérique **cible (target)** à partir des valeurs **caractéristiques (feature)** d'attributs ou de variables d'une observation
 
 **exemple :** prédire le prix d'une voiture en fonction de son age, de son kilométrage, etc...
 
-### Terminologie :
-|||
-|-|-|
-|**attribut**| type de donnée *kilométrage*|
-|**caractéristique** ou <br> **variable explicative**| un attribut et sa valeur *kilométrage = 58 000 km*|
-|**variable à expliquer**| étiquette
- |**intercept** <br> **$\theta_0 $** <br> **terme constant**|dans une équation de régression linéaire <br> valeur de la variable à expliquer lorsque toutes les variables explicatives sont égales à zéro. <br> Point d'intersection avec l'axe des ordonnées.|
-|**biais**| synonyme d'intercept dans les modèles de régression. Il représente l'ajustement constant nécessaire pour mieux prédire la variable à expliquer, indépendamment des variables explicatives. Dans un modèle d'apprentissage automatique, c'est la valeur qui est ajoutée avant d'appliquer les coefficients aux variables explicatives.|
+### Mode de généralisation
+On peut aussi catégoriser les système de machine learning selon leur mode de généralisation  :
+<font color="orange">Apprentissage à partir d'observation</font> - **Instance based learning**<br> Le système généralise à de nouveaux cas en utilisant une mesure de similarité
 
-**Intercept et biais** sont souvent utilisés de manière interchangeable, en particulier dans le contexte de modèles de régression, où le biais ajuste la sortie avant d'appliquer les coefficients aux variables explicatives.
+<font color="orange">Apprentissage à partir d'un modèle</font> <br>
+Construit un modèle à partir des exemples.
+Ce modèle est ensuite utilisé pour les prédictions
 
-
-[Retour à l'index](#contexte-du-projet)
-
-
-##  Apprentissage profond
-<p align="center">
-   <img src ="img/deep_learning.png" alt ="deep learning">
-</p>
-Procédé d’apprentissage automatique utilisant des [réseaux de neurones](./reseaux_neurones.md)
-
-
- composé de nombreuses couches cachées et des algorithmes avec de très nombreux paramètres.
-Ce procédé requière une grande quantité de données afin d’être entraîné.
-
-<p align="center">
-  <img src="img/reseauNeurones.png" alt="reseau de neurones">
-</p>
-
-A permis des progrès importants et rapides :
-- analyse du signal sonore, reconnaissance faciale
-- analyse du signal visuel, reconnaissance vocale
-- le traitement automatisé du langage
-
-Le développement de l'apprentissage profond à été rendu possible par des investissements privés et publics importants, notamment de la part des GAFAM, durant les années 2000.
-<br>
-[Retour à l'index](#contexte-du-projet)
-<br>
 
 ## Apprentissage supervisé
 Les données d'entrainement fournies à l'algorithme comportent des **étiquettes** qui indiquent le résultat voulu.
@@ -157,46 +151,40 @@ Il tente d'organiser les données selon leurs similarités ou différences.
 
 [Retour à l'index](#contexte-du-projet)
 <br>
-## Classification / Régression
-En apprentissage automatique, on distingue les problèmes de régression des problèmes de classification.
 
-**En règle général :**
+## Classification / Régression
+
+### Classification
+
+Prédiction d'une variable  **qualitative/discrète** 
  
- |Classification|Regression|
- |--------------|----------|
- | prédiction d'une variable  **qualitative/discrète**| prédiction d'une variable **quantitative/continue**|
+### Regression
+ 
+Prédiction d'une variable **quantitative/continue**
 
 
 
 ## Classification supervisée
 
-La classification supervisée est une tâche d’apprentissage supervisé où le modèle apprend à attribuer des catégories ou des labels à de nouvelles données en se basant sur des exemples d’entraînement étiquetés. Par exemple, classer des emails comme spam ou non-spam.
+- **On dispose d'observations déjà classés**
+- **On veut classer une nouvelle observation, lui attribuer une étiquette**
 
-1. **On dispose d'articles déjà classés en rubrique :**
-économie, politique, sport, culture...
+La classification supervisée repose sur des algorithmes qui apprennent, à partir d’un ensemble de données d’entraînement étiquetées, à associer chaque nouvelle observation à l’une des catégories définies.
+
 <p align="center">
   <img src="img/classification_supervise.png" alt="classification supervisée">
 </p>
+Concrètement, le modèle identifie des motifs et des relations entre les variables explicatives (features) et les classes cibles, puis il formalise ces relations sous forme de règles de décision.
 
-2. **On veut classer un nouvel article, lui attribuer une étiquette** 
+Ces règles permettent ainsi de classer automatiquement de nouvelles observations en se basant sur leurs caractéristiques.
+
+Par exemple, un modèle de classification des emails peut apprendre que la présence de certains mots-clés, la fréquence d’envoi ou l’adresse de l’expéditeur sont des critères pertinents pour distinguer un spam d’un email légitime.
 
 
-Définition des règles permettant de classer des objets dans des classes.
-
-Ces règles se basent sur des variables qualitatives ou quantitatives des
-objets à classer.
-
-Les méthodes s'étendent souvent à des variables Y quantitatives (régression).
-
-Un échantillon dont le classement est connu est utilisé pour l'apprentissage des règles de classement.
-
-Il faut ensuite étudier la fiabilité de ces règles pour les comparer et les appliquer.
-Evaluer les cas de sous apprentissage ou de sur apprentissage (complexité du modèle). 
-
-On utilise souvent un deuxième échantillon indépendant, dit de validation ou de test.
 <br>
 [Retour à l'index](#contexte-du-projet)
 <br>
+
 ## Classification non supervisée
 
 La classification non supervisée est une technique d'apprentissage automatique utilisée lorsque les données ne sont pas accompagnées de labels ou d'étiquettes préexistantes.
@@ -220,6 +208,238 @@ L'objectif est d'**identifier des structures** cachées **ou des regroupements n
 **Exemples courants :**
 - Regrouper des articles de presse selon leurs sujets (politique, sport, technologie...).
 - Segmenter une clientèle selon ses habitudes d'achat pour du marketing ciblé.
+<br>
+[Retour à l'index](#contexte-du-projet)
+<br>
+
+
+
+## Données d'entraînement, de test, de validation
+
+Après les phases de collecte, de nettoyage et de préparation des données :
+- recherche de correlations entre les variables
+- gestion des variables quantitative (stratification, normalisation, ...)
+- gestion des variables qualitative (encodage, onehot encoding, ...)
+- combinaison de variables (création de nouvelles caractéristiques, feature engineering).
+
+Vient la phase de l'**entrainement du modèle**.
+supervisé ou non supervisé selon que les données contiennent ou non des étiquettes (labels)
+Il permet d'ajuster le modèle choisi aux données dans le but de faire des prédictions ou de la classification sur de nouvelles données
+
+### Entrainement
+
+Entrainer un modèle consiste à définir ses paramètres de telle sorte qu'ils s'ajustent au mieux au jeu d'entrainement
+
+Mesures courantes pour indiquer si un modèle de **Regression** s'ajuste bien ou pas aux donnée d'entrainement ([Fonction de coût](#fonction-de-coût)) :
+- **RMSE** racine carrée des erreurs quadratique moyenne -(root mean square error)
+- **MSE** erreur quadratique moyenne - (mean square error)
+
+Pour entrainer un modèle de régression linéaire, il faut donc trouver le vecteur $\theta$ qui minimise la RMSE
+
+En pratique, il est plus simple de minimiser la MSE que la RMSE
+
+#### Entrainement - Méthode analytique
+Calcul les valeurs des paramètres du modèle qui donnent le meilleur résultat sur le jeu d'entrainement
+(qui minimise la fonction de coût)
+
+#### Entrainement - Descente de gradient
+ou *Gradient Descent* en anglais
+Optimisation itérative qui modifie graduellement les paramètres du modèle pour minimiser la fonction de coût sur le jeu d'entrainement
+**Converge au final vers le même jeu de paramètres que la méthode analytique**
+
+
+![Ajustement](img/fitting.webp)
+
+#### Surajustement
+<font color="orange">**Overfitting**</font> : le modèle apprend trop bien les détails et le bruit des données d'entraînement, ce qui nuit à sa capacité à généraliser.<br>
+Solutions possible :
+- simpliifier le modèle, moins deparamètres
+- réduire le nombre d'attributs des données d"entrainement
+- imposer des contraintes au modèle avec un hyperparamètre (**régularisation**)
+- utiliser plus de données d'apprentissage
+- réduire le bruit des données (suupprimer les données abérantes, les erreurs)
+
+#### Sous-ajustement
+<font color="orange">**Underfitting**</font> : le modèle est trop simple et ne capte pas la structure sous-jacente des données.<br>
+Solutions possible :
+- Choisir un modèle plus puissant, avec plus dde paramètres
+- Fournir dde meilleurs variables à l'algorithme d'apprentissage
+- réduire les contraintes sur le modèle (hyperparamètre de régularisation)
+
+
+
+### test
+La phase de test consiste à évaluer les performances du modèle sur un ensemble de données qui n'a pas été utilisé pendant l'entraînement.
+Cela permet d'obtenir une estimation objective de la capacité du modèle à généraliser ses prédictions sur des données inconnues.
+
+**Évaluation des performances :**
+On compare les prédictions du modèle avec les valeurs du jeu de test.
+
+**Métriques courantes pour évaluer les performances :**
+- Précision (Accuracy) : proportion de prédictions correctes.
+- Rappel (Recall) : capacité du modèle à identifier les éléments positifs.
+- F1-score : moyenne harmonique entre la précision et le rappel.
+- Erreur quadratique moyenne (MSE) : utilisée pour les modèles de régression.
+
+**Importance du test :**
+- Identifier les biais et faiblesses du modèle 
+- Vérifier sa capacité à généraliser.
+
+### validation
+Après l'entraînement et le test, la validation est une étape cruciale.
+Elle vise à affiner le modèle et à s'assurer qu'il fonctionne correctement dans des conditions réelles.
+
+- Optimisation des hyperparamètres du modèle pour améliorer ses performances.
+- détecter d'éventuels problèmes
+- Détecter le surajustement : un modèle trop complexe mémorise les données au lieu d'apprendre leurs tendances.
+- Détecter le sous-ajustement : un modèle trop simple passe à côté des structures importantes.
+- Optimiser les performances : tester différentes configurations pour maximiser les résultats.
+- Généralisation : le jeu de validation permet d'estimer comment le modèle se comportera sur des données réelles et non vues auparavant.
+<br>
+[Retour à l'index](#contexte-du-projet)
+<br>
+
+Dans un projet de Machine Learnig, il faut séparer les données :
+
+1. <font color ="orange">Jeu d'entrainement</font> pour ajuster le modèle aux données. Essayer d'avoir l'erreur d'apprentissage la plus faible possible en essayant plusieur modèles avec différent hyperparamètrees
+
+2. <font color ="orange">Jeu de test</font> pour évaluer les performances du modèle entrainé.
+Connaitre l'erreur de généralisation des différents modèles précedement entrainés
+
+3. <font color ="orange">Jeu de validation</font> pour faire un test final avec le meilleur modèle et les meilleurs hyperparamètres.
+
+ 
+Ces trois étapes – **entraînement**, **test** et **validation** – sont essentielles pour garantir que le modèle est fiable et performant avant son déploiement.
+<br>
+<br>
+Il est courant d'avoir recours à la technique de la [Validation croisée](#validation_croisee) pour éviter de gaspiller des données d'entrainement dans le jeu de validation :
+- le jeu d'entrainement est partagé en sous-ensembles
+- chaque modèle est entrainé sur une combinaison différente de sous-ensembles
+- chaque modèle est validé sur le sous-ensemble restant
+- Le modèle sélectionné est entrainé sur l'ensemble du jeu d'entrainement
+- il est testé sur le jeu de testé pour mesurer l'erreur de généralisation.c
+
+## Validation croisée
+Dans un projet de Machine Learnig, il faut séparer les données :
+
+- un Jeu de données pour **entrainer** le modèle 
+- un Jeu de données pour **tester** le modèle entrainé
+- un dernier Jeu pour **valider** le modèle sur de nouvelles données
+
+**<font color="orange">La validation croisée</font>**
+Consiste en l'utilisation alternative et conjointe des Jeu d'entrainement et de test.
+Cela implique d'entrainer/tester le modèle plusieurs fois :
+
+1. division du Jeu de donné en K sous-ensembles
+<br>
+2. entrainement puis évaluation du modèle K fois
+    - en changeant de combinaison Jeu d'entrainement / Jeu d'évaluation à chaque itération
+<br>
+3. compare les résultats obtenus
+<br>
+
+Ainsi, toutes les tranches de donnée sont alternativement réservèes aux test.
+Au final, toutes les données ont servies à l'entrainement et au test.
+Cela permet d'obtenir une estimation plus stable des performances.
+Nécessite l'utilisation d'une [fonction de fitness](#fonction-de-coût)
+
+
+#### Validation croisée avec un dataset divisé en 4 sous ensemble :
+
+|itération | <font color="blue">entrainement</font> | <font color="orange">test</font>| résultats|
+|:------:|:-------------:|:--------------:|:---------------:|
+|**1**|![train_4](img/cross_validation_train_4.png)<font color="blue">tranches 2, 3 et 4</font>|  ![test_4](img/cross_validation_test_4.png)<font color="orange">tranche 1</font>|![track_4](img/cross_validation_track_4.png)|
+|**2** | <font color="blue">tranches 1, 3 et 4</font>|<font color="orange">tranche 2</font>|![track_3](img/cross_validation_track_3.png)|
+|**3** | <font color="blue">tranches 1, 2 et 4</font>|<font color="orange">tranche 3</font>|![track_2](img/cross_validation_track_2.png)|
+|**4** | <font color="blue">tranches 1, 2 et 3</font>|<font color="orange">tranche 4</font>|![track_1](img/cross_validation_track_1.png)|
+
+
+
+L'idéal étant de faire une **validation croisée avec différent modèles** afin de les comparer :
+- Logistic regression
+- support vector machines
+- k-nearest neighbors
+- etc...
+<p align="center">
+  <img src="img/cross_validation_comparaison.png" alt="comparaison des résultats de la cross validation">
+</p>
+
+
+[Retour à l'index](#contexte-du-projet)
+
+
+## Corrélation linéaire (de Pearson) entre deux variables
+
+La corrélation linéaire de Pearson mesure l'intensité et le sens de la relation linéaire entre deux variables quantitatives.
+
+Elle est définie par un coefficient, noté **r**, avec une **valeur comprise entre -1 et 1 :**
+| coefficient r|correlation|signification|
+|:--:|:-------:|-----|
+|**1**| positive forte| si une des variables augmente, l'autre augmente pareillement|
+|**0.3**| positive faible| si une des variables augmente, l'autre augmente moins|
+|**0**|Aucune corrélation linéaire| les variables ne présentent pas de relation linéaire claire|
+|**- 1**| négative forte| si une des variables augmente, l'autre diminue pareillement|
+|**- 0.3**| négative faible| si une des variables augmente, l'autre diminue moins|
+
+
+[Formule du coefficient de Pearson](formules.md#coefficient-de-pearson)
+
+
+
+<br>
+
+**Ci dessous**, pour des Jeu de données à deux variables :
+le coefficient de corrélation et le nuage de points correspondant
+<p align="center">
+  <img src="img/correlation.svg" alt="corrélation">
+</p>
+
+- **2ème ligne :** coefficients = 1 ou -1  indépendemment de la pente
+- **3ème ligne :** coefficients nuls alors que les variables ne semblent pas indépendantes !
+   <font color="orange">relations **non linéaires**</font>
+
+<br>
+<br>
+
+**Matrice de correlation d'un dataset de 4 variables sur les pétales de fleurs iris**
+<p align="center">
+  <img src="img/matrice_correlation.png" alt="matrice de corrélation">
+</p>
+
+**<font color="orange">Attention :</font>**
+- une corrélation forte ne signifie pas nécessairement une relation causale
+- ne détecte pas les relation non linéaires (par ex: si x proche de 0, y augmente)
+
+<br>
+
+[Retour à l'index](#contexte-du-projet)
+<br>
+
+## Fonction de coût
+
+Mesure de performance qui permet de savoir si le modèle est bien parametré :
+| fonction|Valeur si le modèle est bon|
+|--------------|-------------|
+|de **fitness** (d'adaptation) | élevée|
+| de **coût** | faible|
+
+La **<font color="orange">fonction de coût</font>** quantifie l'**écart entre les prédictions du modèle et les valeurs réelles**.
+L'objectif lors de l'entraînement est de minimiser cette fonction pour améliorer la précision du modèle.
+
+Différents types de fonctions de coût existent selon le problème traité :
+
+- [**Erreur quadratique moyenne (MSE)**](#regression-lineaire.md) pour les problèmes de **régression**
+- **Entropie croisée** pour les problèmes de **classification**
+- **Hinge loss** pour les **SVM (machines à vecteurs de support)**
+
+[Formule MSE](formules.md#MSE)
+
+Un modèle bien paramétré aura donc une fonction de coût faible et, inversement, une fonction de fitness élevée, indiquant une bonne capacité du modèle à généraliser sur des données non vues.
+
+#### A noter
+<font color ="orange">La fonction de coût MSE du modèle de regression linéaire</font> est une **fonction convexe (en cloche)**
+Elle à donc <font color ="orange">un minimum global</font> , mais <font color ="orange">pas de minimum local</font>
+C'est aussi une fonction continue, sa pente ne varie jamais abruptement.
 <br>
 [Retour à l'index](#contexte-du-projet)
 <br>
@@ -330,205 +550,6 @@ Le modèle linéaire effectue une **prédiction `y`** en calculant une somme pon
 
 Peut aussi s'écrire sous forme [vectorielle ou matricielle](regression_lineaire.md)
 
-<br>
-[Retour à l'index](#contexte-du-projet)
-<br>
-
-## Validation croisée
-Dans un projet de Machine Learnig, il faut séparer les données :
-
-- un jeux de données pour **entrainer** le modèle 
-- un jeux de données pour **tester** le modèle entrainé
-- un dernier jeux pour **valider** le modèle sur de nouvelles données
-
-**<font color="orange">La validation croisée</font>**
-Consiste en l'utilisation alternative et conjointe des jeux d'entrainement et de test.
-Cela implique d'entrainer/tester le modèle plusieurs fois :
-
-1. division du jeux de donné en K sous-ensembles
-<br>
-2. entrainement puis évaluation du modèle K fois
-    - en changeant de combinaison jeux d'entrainement / jeux d'évaluation à chaque itération
-<br>
-3. compare les résultats obtenus
-<br>
-
-Ainsi, toutes les tranches de donnée sont alternativement réservèes aux test.
-Au final, toutes les données ont servies à l'entrainement et au test.
-Cela permet d'obtenir une estimation plus stable des performances.
-Nécessite l'utilisation d'une [fonction de fitness](#fonction-de-coût)
-
-
-#### Validation croisée avec un dataset divisé en 4 sous ensemble :
-
-|itération | <font color="blue">entrainement</font> | <font color="orange">test</font>| résultats|
-|:------:|:-------------:|:--------------:|:---------------:|
-|**1**|![train_4](img/cross_validation_train_4.png)<font color="blue">tranches 2, 3 et 4</font>|  ![test_4](img/cross_validation_test_4.png)<font color="orange">tranche 1</font>|![track_4](img/cross_validation_track_4.png)|
-|**2** | <font color="blue">tranches 1, 3 et 4</font>|<font color="orange">tranche 2</font>|![track_3](img/cross_validation_track_3.png)|
-|**3** | <font color="blue">tranches 1, 2 et 4</font>|<font color="orange">tranche 3</font>|![track_2](img/cross_validation_track_2.png)|
-|**4** | <font color="blue">tranches 1, 2 et 3</font>|<font color="orange">tranche 4</font>|![track_1](img/cross_validation_track_1.png)|
-
-
-
-L'idéal étant de faire une **validation croisée avec différent modèles** afin de les comparer :
-- Logistic regression
-- support vector machines
-- k-nearest neighbors
-- etc...
-<p align="center">
-  <img src="img/cross_validation_comparaison.png" alt="comparaison des résultats de la cross validation">
-</p>
-
-
-[Retour à l'index](#contexte-du-projet)
-
-## Données d'entraînement, de test, de validation
-Dans un projet de Machine Learnig, il faut séparer les données :
-
-1. un jeux de données d'**entrainement** pour ajuster le modèle aux données. **apprendre à partir des données.**
-2. un jeux de données de **test** pour évaluer les performances du modèle entrainé. **évaluer la qualité de l'apprentissage.**
-3. un dernier jeux de **validation** pour optimiser le modèle et prévenir le surajustement.  **affiner et optimiser le modèle.**
-   (avec de nouvelles données)
- 
-Ces trois étapes – **entraînement**, **test** et **validation** – sont essentielles pour garantir que le modèle est fiable et performant avant son déploiement.
-
-Après les phases de collecte, de nettoyage et de préparation des données :
-- recherche de correlations entre les variables
-- gestion des variables quantitative (stratification, normalisation, ...)
-- gestion des variables qualitative (encodage, onehot encoding, ...)
-- combinaison de variables (création de nouvelles caractéristiques, feature engineering).
-
-Vient la phase de l'**entrainement du modèle**.
-supervisé ou non supervisé selon que les données contiennent ou non des étiquettes (labels)
-Il permet d'ajuster le modèle choisi aux données dans le but de faire des prédictions ou de la classification sur de nouvelles données
-
-## Entrainement
-
-Entrainer un modèle consiste à définir ses paramètres de telle sorte qu'ils s'ajustent au mieux au jeu d'entrainement
-
-Mesure courante pour indiquer si un modèle de **Regression** s'ajuste bien ou pas aux donnée d'entrainement :
-- **RMSE** racine carrée des erreurs quadratique moyenne -(root mean square error)
-- **MSE** erreur quadratique moyenne - (mean square error)
-
-Pour entrainer un modèle de régression linéaire, il faut donc trouver le vecteur $\theta$ qui minimise la RMSE
-
-En pratique, il est plus simple de minimiser la MSE que la RMSE
-
-### Entrainement - Méthode analytique
-Calcul les valeurs des paramètres du modèle qui donnent le meilleur résultat sur le jeu d'entrainement
-(qui minimise la fonction de coût)
-
-### Entrainement - Descente de gradient
-ou *Gradient Descent* en anglais
-Optimisation itérative qui modifie graduellement les paramètres du modèle pour minimiser la fonction de coût sur le jeu d'entrainement
-**Converge au final vers le même jeu de paramètres que la méthode analytique**
-
-**Problématique :**
-
-**- Surajustement** (overfitting) : le modèle apprend trop bien les détails et le bruit des données d'entraînement, ce qui nuit à sa capacité à généraliser.
-**- Sous-ajustement** (underfitting) : le modèle est trop simple et ne capte pas la structure sous-jacente des données.
-
-## test
-La phase de test consiste à évaluer les performances du modèle sur un ensemble de données qui n'a pas été utilisé pendant l'entraînement.
-Cela permet d'obtenir une estimation objective de la capacité du modèle à généraliser ses prédictions sur des données inconnues.
-
-**Évaluation des performances :**
-On compare les prédictions du modèle avec les valeurs du jeu de test.
-
-**Métriques courantes pour évaluer les performances :**
-- Précision (Accuracy) : proportion de prédictions correctes.
-- Rappel (Recall) : capacité du modèle à identifier les éléments positifs.
-- F1-score : moyenne harmonique entre la précision et le rappel.
-- Erreur quadratique moyenne (MSE) : utilisée pour les modèles de régression.
-
-**Importance du test :**
-- Identifier les biais et faiblesses du modèle 
-- Vérifier sa capacité à généraliser.
-
-## validation
-Après l'entraînement et le test, la validation est une étape cruciale.
-Elle vise à affiner le modèle et à s'assurer qu'il fonctionne correctement dans des conditions réelles.
-
-- Optimisation des hyperparamètres du modèle pour améliorer ses performances.
-- détecter d'éventuels problèmes
-- Détecter le surajustement : un modèle trop complexe mémorise les données au lieu d'apprendre leurs tendances.
-- Détecter le sous-ajustement : un modèle trop simple passe à côté des structures importantes.
-- Optimiser les performances : tester différentes configurations pour maximiser les résultats.
-- Généralisation : le jeu de validation permet d'estimer comment le modèle se comportera sur des données réelles et non vues auparavant.
-<br>
-[Retour à l'index](#contexte-du-projet)
-<br>
-## Corrélation linéaire (de Pearson) entre deux variables
-
-La corrélation linéaire de Pearson mesure l'intensité et le sens de la relation linéaire entre deux variables quantitatives.
-
-Elle est définie par un coefficient, noté **r**, avec une **valeur comprise entre -1 et 1 :**
-| coefficient r|correlation|signification|
-|:--:|:-------:|-----|
-|**1**| positive forte| si une des variables augmente, l'autre augmente pareillement|
-|**0.3**| positive faible| si une des variables augmente, l'autre augmente moins|
-|**0**|Aucune corrélation linéaire| les variables ne présentent pas de relation linéaire claire|
-|**- 1**| négative forte| si une des variables augmente, l'autre diminue pareillement|
-|**- 0.3**| négative faible| si une des variables augmente, l'autre diminue moins|
-
-
-[Formule du coefficient de Pearson](formules.md#coefficient-de-pearson)
-
-
-
-<br>
-
-**Ci dessous**, pour des jeux de données à deux variables :
-le coefficient de corrélation et le nuage de points correspondant
-<p align="center">
-  <img src="img/correlation.svg" alt="corrélation">
-</p>
-
-- **2ème ligne :** coefficients = 1 ou -1  indépendemment de la pente
-- **3ème ligne :** coefficients nuls alors que les variables ne semblent pas indépendantes !
-   relations **non linéaires**
-
-<br>
-
-**Matrice de correlation d'un dataset de 4 variables sur les pétales de fleurs iris**
-<p align="center">
-  <img src="img/matrice_correlation.png" alt="matrice de corrélation">
-</p>
-
-**<font color="orange">Attention :</font>**
-- une corrélation forte ne signifie pas nécessairement une relation causale
-- ne détecte pas les relation non linéaires (par ex: si x proche de 0, y augmente)
-
-<br>
-
-[Retour à l'index](#contexte-du-projet)
-<br>
-
-## Fonction de coût
-
-Mesure de performance qui permet de savoir si le modèle est bien parametré :
-| fonction|Valeur si le modèle est bon|
-|--------------|-------------|
-|de **fitness** (d'adaptation) | élevée|
-| de **coût** | faible|
-
-La **<font color="orange">fonction de coût</font>** quantifie l'**écart entre les prédictions du modèle et les valeurs réelles**.
-L'objectif lors de l'entraînement est de minimiser cette fonction pour améliorer la précision du modèle.
-
-Différents types de fonctions de coût existent selon le problème traité :
-
-- [**Erreur quadratique moyenne (MSE)**](#regression-lineaire.md) pour les problèmes de **régression**
-- **Entropie croisée** pour les problèmes de **classification**
-- **Hinge loss** pour les **SVM (machines à vecteurs de support)**
-
-[Formule MSE](formules.md#MSE)
-
-Un modèle bien paramétré aura donc une fonction de coût faible et, inversement, une fonction de fitness élevée, indiquant une bonne capacité du modèle à généraliser sur des données non vues.
-
-#### A noter
-<font color ="orange">La fonction de coût MSE du modèle de regression linéaire</font> est une **fonction convexe (en cloche)**
-Elle à donc <font color ="orange">un minimum global</font> , mais <font color ="orange">pas de minimum local</font>
-C'est aussi une fonction continue, sa pente ne varie jamais abruptement.
 <br>
 [Retour à l'index](#contexte-du-projet)
 <br>
@@ -741,3 +762,27 @@ Ainsi, en calculant les dérivées partielles pour chaque paramètre, nous savon
 ![Avec et sans normalisation des variable](img/gd_normalize.png)
 
 
+## Apprentissage profond
+
+<p align="center">
+   <img src ="img/deep_learning.png" alt ="deep learning">
+</p>
+Procédé d’apprentissage automatique utilisant des [réseaux de neurones](./reseaux_neurones.md)
+
+
+ composé de nombreuses couches cachées et des algorithmes avec de très nombreux paramètres.
+Ce procédé requière une grande quantité de données afin d’être entraîné.
+
+<p align="center">
+  <img src="img/reseauNeurones.png" alt="reseau de neurones">
+</p>
+
+A permis des progrès importants et rapides :
+- analyse du signal sonore, reconnaissance faciale
+- analyse du signal visuel, reconnaissance vocale
+- le traitement automatisé du langage
+
+Le développement de l'apprentissage profond à été rendu possible par des investissements privés et publics importants, notamment de la part des GAFAM, durant les années 2000.
+<br>
+[Retour à l'index](#contexte-du-projet)
+<br>
