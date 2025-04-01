@@ -53,7 +53,7 @@
 **Intercept et biais** sont souvent utilisés de manière interchangeable, en particulier dans le contexte de modèles de régression, où le biais ajuste la sortie avant d'appliquer les coefficients aux variables explicatives.
 
 
-[Retour à l'index](#contexte-du-projet)
+[Retour à l'index](#recherche-et-documentation)
 
 
 
