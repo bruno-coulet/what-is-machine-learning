@@ -327,25 +327,22 @@ Ces trois étapes – **entraînement**, **validation** et **test** – sont ess
  
 ## Validation croisée
 <br>
-Afin d'éviter de gaspiller des données d'entrainement dans le jeu de validation, il est courant d'avoir recours à la technique de la [Validation croisée](#validation_croisee) :<br>
+Afin d'éviter de gaspiller des données d'entrainement dans le jeu de validation, il est courant d'avoir recours à la technique de la validation croisée :<br>
 
 - le jeu d'entrainement est partagé en sous-ensembles
 - chaque modèle est entrainé sur une combinaison différente de sous-ensembles
 - chaque modèle est validé sur le sous-ensemble restant
 - Le modèle sélectionné est entrainé sur l'ensemble du jeu d'entrainement
-- il est testé sur le jeu de testé pour mesurer l'erreur de généralisation.<br>
+- il est ensuite testé sur le jeu de test pour mesurer l'erreur de généralisation.<br>
 
 **<font color="orange">La validation croisée</font>**
 Consiste en l'utilisation alternative et conjointe des Jeu d'entrainement et de test.
 Cela implique d'entrainer/tester le modèle plusieurs fois :<br>
 
 1. division du Jeu de donné en K sous-ensembles
-<br>
 2. entrainement puis évaluation du modèle K fois
     - en changeant de combinaison Jeu d'entrainement / Jeu d'évaluation à chaque itération
-<br>
 3. compare les résultats obtenus
-<br>
 
 Ainsi, toutes les tranches de donnée sont alternativement réservèes aux test.
 Au final, toutes les données ont servies à l'entrainement et au test.
