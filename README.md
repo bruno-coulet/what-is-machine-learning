@@ -309,7 +309,7 @@ Après l'entraînement et le test, la validation vise à affiner le modèle et �
 
 Dans un projet de Machine Learnig, il faut séparer les données :
 
-1. <font color ="orange">Jeu d'entrainement</font> pour ajuster le modèle aux données. Essayer d'avoir l'erreur d'apprentissage la plus faible possible en essayant plusieur modèles avec différent hyperparamètrees
+1. <font color ="orange">Jeu d'entrainement</font> pour ajuster le modèle aux données. Essayer d'avoir l'erreur d'apprentissage la plus faible possible en comparant plusieurs modèles avec différent hyperparamètrees
 
 2. <font color ="orange">Jeu de test</font> pour évaluer les performances du modèle entrainé.
 Connaitre l'erreur de généralisation des différents modèles précedement entrainés
