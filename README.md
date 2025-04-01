@@ -90,7 +90,7 @@ machine learning, la prédiction, la comparaison de modèles et la modélisation
 4. **Analyse prescriptive**
 suite logique et proactive de l'analyse prédictive
 <br>
-[Retour à l'index](#contexte-du-projet)
+[Retour à l'index](#recherche-et-documentation)
 <br>
 
 ## Apprentissage automatique
@@ -132,7 +132,7 @@ L'objectif de l'algorithme est d'apprendre à faire correspondre les entrées au
   <img src="img/apprentissage_supervise.png" alt="apprantissage supervisé">
 </p>
 
-[Retour à l'index](#contexte-du-projet)
+[Retour à l'index](#recherche-et-documentation)
 
 
 ## Apprentissage non supervisé
@@ -150,7 +150,7 @@ Il tente d'organiser les données selon leurs similarités ou différences.
 
 
 
-[Retour à l'index](#contexte-du-projet)
+[Retour à l'index](#recherche-et-documentation)
 <br>
 
 ## Classification / Régression
@@ -183,7 +183,7 @@ Ces règles permettent ainsi de classer automatiquement de nouvelles observation
 
 
 <br>
-[Retour à l'index](#contexte-du-projet)
+[Retour à l'index](#recherche-et-documentation)
 <br>
 
 ## Classification non supervisée
@@ -210,7 +210,7 @@ L'objectif est d'**identifier des structures** cachées **ou des regroupements n
 - Regrouper des articles de presse selon leurs sujets (politique, sport, technologie...).
 - Segmenter une clientèle selon ses habitudes d'achat pour du marketing ciblé.
 <br>
-[Retour à l'index](#contexte-du-projet)
+[Retour à l'index](#recherche-et-documentation)
 <br>
 
 
@@ -297,7 +297,7 @@ Elle vise à affiner le modèle et à s'assurer qu'il fonctionne correctement da
 - Optimiser les performances : tester différentes configurations pour maximiser les résultats.
 - Généralisation : le jeu de validation permet d'estimer comment le modèle se comportera sur des données réelles et non vues auparavant.
 <br>
-[Retour à l'index](#contexte-du-projet)
+[Retour à l'index](#recherche-et-documentation)
 <br>
 
 Dans un projet de Machine Learnig, il faut séparer les données :
@@ -366,7 +366,7 @@ L'idéal étant de faire une **validation croisée avec différent modèles** af
 </p>
 
 
-[Retour à l'index](#contexte-du-projet)
+[Retour à l'index](#recherche-et-documentation)
 
 
 ## Corrélation linéaire (de Pearson) entre deux variables
@@ -413,7 +413,7 @@ le coefficient de corrélation et le nuage de points correspondant
 
 <br>
 
-[Retour à l'index](#contexte-du-projet)
+[Retour à l'index](#recherche-et-documentation)
 <br>
 
 ## Fonction de coût
@@ -442,7 +442,7 @@ Un modèle bien paramétré aura donc une fonction de coût faible et, inverseme
 Elle à donc <font color ="orange">un minimum global</font> , mais <font color ="orange">pas de minimum local</font>
 C'est aussi une fonction continue, sa pente ne varie jamais abruptement.
 <br>
-[Retour à l'index](#contexte-du-projet)
+[Retour à l'index](#recherche-et-documentation)
 <br>
 
 
@@ -552,7 +552,7 @@ Le modèle linéaire effectue une **prédiction `y`** en calculant une somme pon
 Peut aussi s'écrire sous forme [vectorielle ou matricielle](regression_lineaire.md)
 
 <br>
-[Retour à l'index](#contexte-du-projet)
+[Retour à l'index](#recherche-et-documentation)
 <br>
 
 
@@ -785,5 +785,5 @@ A permis des progrès importants et rapides :
 
 Le développement de l'apprentissage profond à été rendu possible par des investissements privés et publics importants, notamment de la part des GAFAM, durant les années 2000.
 <br>
-[Retour à l'index](#contexte-du-projet)
+[Retour à l'index](#recherche-et-documentation)
 <br>
