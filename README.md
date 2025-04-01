@@ -257,8 +257,8 @@ Optimisation itérative qui modifie graduellement les paramètres du modèle pou
 
 
 ### validation
-L'objectif est d'ajuster et d'optimiser le modèle.<br>
-On utilise un jeu de validation distinct du jeu d'entrainement (validation simple) ou la cross validation
+L'objectif est d'optimiser le modèle.<br>
+On utilise soit un jeu de validation distinct du jeu d'entrainement (validation simple) soit la cross validation pour économiser des données ( le même jeu sert à l'entrainement et à la validation )
 
 - Optimisation des hyperparamètres du modèle pour améliorer ses performances.
 - détecter d'éventuels problèmes
