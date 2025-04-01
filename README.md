@@ -215,6 +215,7 @@ L'objectif est d'**identifier des structures** cachées **ou des regroupements n
 - Regrouper des articles de presse selon leurs sujets (politique, sport, technologie...).
 - Segmenter une clientèle selon ses habitudes d'achat pour du marketing ciblé.
 <br>
+
 [Retour à l'index](#recherche-et-documentation)
 <br>
 
