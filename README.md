@@ -339,14 +339,14 @@ Afin d'éviter de gaspiller des données d'entrainement dans le jeu de validatio
 Consiste en l'utilisation alternative et conjointe des Jeu d'entrainement et de test.
 Cela implique d'entrainer/tester le modèle plusieurs fois :<br>
 
-1. division du Jeu de donné en K sous-ensembles
-2. entrainement puis évaluation du modèle K fois
+1. division du Jeu de donné en x sous-ensembles
+2. entrainement puis évaluation du modèle x fois
     - en changeant de combinaison Jeu d'entrainement / Jeu d'évaluation à chaque itération
 3. compare les résultats obtenus
 
-Ainsi, toutes les tranches de donnée sont alternativement réservèes aux test.
-Au final, toutes les données ont servies à l'entrainement et au test.
-Cela permet d'obtenir une estimation plus stable des performances.
+Ainsi, toutes les tranches de données sont alternativement réservèes aux test.<br>
+Au final, toutes les données ont servies à l'entrainement et au test.<br>
+Cela permet d'obtenir une estimation plus stable des performances.<br>
 Nécessite l'utilisation d'une [fonction de fitness](#fonction-de-coût)
 
 
