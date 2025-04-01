@@ -234,6 +234,14 @@ Vient la phase de l'**entrainement du modèle**.
 supervisé ou non supervisé selon que les données contiennent ou non des étiquettes (labels)
 Il permet d'ajuster le modèle choisi aux données dans le but de faire des prédictions ou de la classification sur de nouvelles données
 
+Il faut séparer les données :
+1. <font color ="orange">Jeu d'entrainement</font> pour ajuster le modèle aux données. Essayer d'avoir l'erreur d'apprentissage la plus faible possible en comparant plusieurs modèles avec différent hyperparamètrees
+
+2. <font color ="orange">Jeu de validation</font> pour évaluer les performances du modèle entrainé.
+Connaitre l'erreur de généralisation des différents modèles précedement entrainés
+
+3. <font color ="orange">Jeu de test</font> pour faire un test final avec le meilleur modèle et les meilleurs hyperparamètres.
+
 ### Entrainement
 
 Entrainer un modèle consiste à définir ses paramètres de telle sorte qu'ils s'ajustent au mieux au jeu d'entrainement
@@ -310,38 +318,20 @@ On compare les prédictions du modèle avec les valeurs du jeu de test.
 
 Une fois le modèle testé, on ne le modifie plus.
 
-
+Ces trois étapes – **entraînement**, **validation** et **test** – sont essentielles pour garantir que le modèle est fiable et performant avant son déploiement.
 <br>
 
 [Retour à l'index](#recherche-et-documentation)
 <br>
-
-Dans un projet de Machine Learnig, il faut séparer les données :
-
-1. <font color ="orange">Jeu d'entrainement</font> pour ajuster le modèle aux données. Essayer d'avoir l'erreur d'apprentissage la plus faible possible en comparant plusieurs modèles avec différent hyperparamètrees
-
-2. <font color ="orange">Jeu de test</font> pour évaluer les performances du modèle entrainé.
-Connaitre l'erreur de généralisation des différents modèles précedement entrainés
-
-3. <font color ="orange">Jeu de validation</font> pour faire un test final avec le meilleur modèle et les meilleurs hyperparamètres.
-
  
-Ces trois étapes – **entraînement**, **test** et **validation** – sont essentielles pour garantir que le modèle est fiable et performant avant son déploiement.
+## Validation croisée
 <br>
-<br>
-Il est courant d'avoir recours à la technique de la [Validation croisée](#validation_croisee) pour éviter de gaspiller des données d'entrainement dans le jeu de validation :
+Afin d'éviter de gaspiller des données d'entrainement dans le jeu de validation, il est courant d'avoir recours à la technique de la [Validation croisée](#validation_croisee)  :
 - le jeu d'entrainement est partagé en sous-ensembles
 - chaque modèle est entrainé sur une combinaison différente de sous-ensembles
 - chaque modèle est validé sur le sous-ensemble restant
 - Le modèle sélectionné est entrainé sur l'ensemble du jeu d'entrainement
 - il est testé sur le jeu de testé pour mesurer l'erreur de généralisation.c
-
-## Validation croisée
-Dans un projet de Machine Learnig, il faut séparer les données :
-
-- un Jeu de données pour **entrainer** le modèle 
-- un Jeu de données pour **tester** le modèle entrainé
-- un dernier Jeu pour **valider** le modèle sur de nouvelles données
 
 **<font color="orange">La validation croisée</font>**
 Consiste en l'utilisation alternative et conjointe des Jeu d'entrainement et de test.
