@@ -294,7 +294,7 @@ On compare les prédictions du modèle avec les valeurs du jeu de test.
 - Vérifier sa capacité à généraliser.
 
 ### validation
-Après l'entraînement et le test, la validation vise à affiner le modèle et à s'assurer qu'il fonctionne correctement dans des conditions réelles.
+Après l'entraînement et le test, la validation permet de s'assurer que le modèle fonctionne correctement dans des conditions réelles.
 
 - Optimisation des hyperparamètres du modèle pour améliorer ses performances.
 - détecter d'éventuels problèmes
