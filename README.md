@@ -1,4 +1,4 @@
-# what-is-machine-learning
+# what is machine learning
 
 ## Recherches et documentation
 
