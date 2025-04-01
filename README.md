@@ -239,21 +239,20 @@ Il permet d'ajuster le modèle choisi aux données dans le but de faire des pré
 Entrainer un modèle consiste à définir ses paramètres de telle sorte qu'ils s'ajustent au mieux au jeu d'entrainement
 
 La [Fonction de coût](#fonction-de-coût) permet de mesurer si le modèle s'ajuste bien aux donnée d'entrainement (ou pas).
-Pour un modèle de **Regression** les fonction de coût courantes sont :
+Pour un modèle de **Regression** les fonctions de coût usuelles sont :
 - **RMSE** racine carrée des erreurs quadratique moyenne -(root mean square error)
 - **MSE** erreur quadratique moyenne - (mean square error)
 
-Pour entrainer un modèle de régression linéaire, il faut donc trouver le vecteur $\theta$ qui minimise la RMSE
+Pour entrainer un modèle de régression linéaire, il faut trouver le vecteur $\theta$ qui minimise la fonction de coût.
 
-En pratique, il est plus simple de minimiser la MSE que la RMSE
 
 #### Entrainement - Méthode analytique
 Calcul les valeurs des paramètres du modèle qui donnent le meilleur résultat sur le jeu d'entrainement
 (qui minimise la fonction de coût)
 
 #### Entrainement - Descente de gradient
-ou *Gradient Descent* en anglais
-Optimisation itérative qui modifie graduellement les paramètres du modèle pour minimiser la fonction de coût sur le jeu d'entrainement
+ou *Gradient Descent* en anglais<br>
+Optimisation itérative qui modifie graduellement les paramètres du modèle pour minimiser la fonction de coût sur le jeu d'entrainement<br>
 **Converge au final vers le même jeu de paramètres que la méthode analytique**
 
 
