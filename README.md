@@ -183,22 +183,27 @@ Ces règles permettent ainsi de classer automatiquement de nouvelles observation
 
 
 <br>
+
 [Retour à l'index](#recherche-et-documentation)
+
 <br>
 
 ## Classification non supervisée
 
 La classification non supervisée est une technique d'apprentissage automatique utilisée lorsque les données ne sont pas accompagnées de labels ou d'étiquettes préexistantes.
+
 L'objectif est d'**identifier des structures** cachées **ou des regroupements naturels** dans les données.
 
 1. On dispose d'**éléments non classés**
    les mots d'un texte ou les clients d'un site e-commerce sans information préalable sur leurs catégories.
 <br>
+
 2. On cherche à les **regrouper en classes en se basant sur leurs similitudes**
   par exemple :
     - les mots ayant des contextes d'utilisation proches
     - les clients ayant des comportements d'achat similaires.
 <br>
+
 3. Si l'algorithme attribue la même étiquette à plusieurs éléments.
    Ils sont supposés être en rapport avec une même thématique ou un même comportement, formant ainsi des clusters (groupes).
 
