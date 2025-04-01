@@ -238,7 +238,7 @@ Il permet d'ajuster le modèle choisi aux données dans le but de faire des pré
 
 Entrainer un modèle consiste à définir ses paramètres de telle sorte qu'ils s'ajustent au mieux au jeu d'entrainement
 
-La ([Fonction de coût](#fonction-de-coût)) permet de mesurer si le modèle s'ajuste bien aux donnée d'entrainement (ou pas).
+La [Fonction de coût](#fonction-de-coût) permet de mesurer si le modèle s'ajuste bien aux donnée d'entrainement (ou pas).
 Pour un modèle de **Regression** les fonction de coût courantes sont :
 - **RMSE** racine carrée des erreurs quadratique moyenne -(root mean square error)
 - **MSE** erreur quadratique moyenne - (mean square error)
