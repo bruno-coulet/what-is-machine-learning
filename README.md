@@ -362,10 +362,7 @@ Nécessite l'utilisation d'une [fonction de fitness](#fonction-de-coût)
 
 
 L'idéal étant de faire une **validation croisée avec différent modèles** afin de les comparer :
-- Logistic regression
-- support vector machines
-- k-nearest neighbors
-- etc...
+
 <p align="center">
   <img src="img/cross_validation_comparaison.png" alt="comparaison des résultats de la cross validation">
 </p>
