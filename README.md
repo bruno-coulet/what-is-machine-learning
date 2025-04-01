@@ -175,11 +175,11 @@ La classification supervisée repose sur des algorithmes qui apprennent, à part
 <p align="center">
   <img src="img/classification_supervise.png" alt="classification supervisée">
 </p>
-Concrètement, le modèle identifie des motifs et des relations entre les variables explicatives (features) et les classes cibles, puis il formalise ces relations sous forme de règles de décision.
+Le modèle identifie des motifs et des relations entre les variables explicatives (features) et les classes cibles, puis il formalise ces relations sous forme de règles de décision.
 
 Ces règles permettent ainsi de classer automatiquement de nouvelles observations en se basant sur leurs caractéristiques.
 
-Par exemple, un modèle de classification des emails peut apprendre que la présence de certains mots-clés, la fréquence d’envoi ou l’adresse de l’expéditeur sont des critères pertinents pour distinguer un spam d’un email légitime.
+**Exemple :** un modèle de classification des emails peut apprendre que la présence de certains mots-clés, la fréquence d’envoi ou l’adresse de l’expéditeur sont des critères pertinents pour distinguer un spam d’un email légitime.
 
 
 <br>
