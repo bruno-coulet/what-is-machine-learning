@@ -566,7 +566,7 @@ Peut aussi s'écrire sous forme [vectorielle ou matricielle](regression_lineaire
 La descente de gradient (*Gradient Descent*) est une méthode d'entraînement utilisée pour optimiser les modèles de **régression linéaire** et d'autres algorithmes d'apprentissage automatique.  
 
 #### **Principe : Correction progressive des paramètres**  
-L'objectif est de mettre à jour les paramètres \( \theta \) du modèle afin de **réduire la valeur de la fonction coût** sur le jeu d'entraînement.  
+L'objectif est de mettre à jour les paramètres $ \theta $ du modèle afin de **réduire la valeur de la fonction coût** sur le jeu d'entraînement.  
 Pour ce faire, on ajuste progressivement et simultanément les paramètres en **suivant la direction opposée au gradient** de la fonction coût.  
 
 <div style="border: 1px solid black; padding: 10px;">
