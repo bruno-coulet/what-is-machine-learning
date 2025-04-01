@@ -525,7 +525,7 @@ En mathématiques, la régression recouvre plusieurs méthodes d’analyse stati
 |**Corrélation entre variables explicatives** | Régression PLS, Ridge|  
 
 
-#### Régression linéaire  {#regression-lineaire}
+#### Régression linéaire(#regression-lineaire)
 
 [notebook regression_lineaire](regression.ipynb)
 
