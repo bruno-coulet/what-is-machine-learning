@@ -260,13 +260,14 @@ Calcul les valeurs des paramètres du modèle qui donnent le meilleur résultat 
 #### Entrainement - Descente de gradient
 ou *Gradient Descent* en anglais<br>
 Optimisation itérative qui modifie graduellement les paramètres du modèle pour minimiser la fonction de coût sur le jeu d'entrainement<br>
-**Converge au final vers le même jeu de paramètres que la méthode analytique** ou une approximation du minimum global si le modèle n'est pas convexe.
+Si la fonction de coût est convexe, la DG**converge au final vers le même jeu de paramètres que la méthode analytique**.<br>
+Sinon, elle converge vers un optimum approximatif (minimum local)
 
 
 
 ### validation
 L'objectif est d'optimiser le modèle.<br>
-On utilise soit un jeu de validation distinct du jeu d'entrainement (validation simple) soit la cross validation pour économiser des données ( le même jeu sert à l'entrainement et à la validation )
+On utilise soit un jeu de validation distinct du jeu d'entrainement (validation simple) soit la cross validation pour économiser des données (On utilise le même jeu de données divisé en plusieurs sous-ensembles pour l'entraînement et la validation).
 
 - Optimisation des hyperparamètres du modèle pour améliorer ses performances.
 - détecter d'éventuels problèmes
@@ -303,14 +304,14 @@ Cela permet d'obtenir une estimation objective de la capacité du modèle à gé
 On compare les prédictions du modèle avec les valeurs du jeu de test.
 
 **Métriques courantes pour évaluer les performances :**
-**classification**
+**Classification**
 - Précision (Accuracy) : proportion de prédictions correctes.
 - Rappel (Recall) : capacité du modèle à identifier les éléments positifs.
 - F1-score : moyenne harmonique entre la précision et le rappel.
-**régression**
-- Erreur quadratique moyenne (MSE).
-- RMSE.
-- R² (coefficient de détermination).
+**Régression**
+- MSE (Mean Squared Error) : erreur quadratique moyenne.
+- RMSE (Root Mean Squared Error) : racine de l'erreur quadratique moyenne.
+- R² (coefficient de détermination) : mesure la qualité de l'ajustement du modèle.
 
 **Importance du test :**
 - Identifier les biais et faiblesses du modèle 
