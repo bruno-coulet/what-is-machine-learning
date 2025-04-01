@@ -222,7 +222,7 @@ L'objectif est d'**identifier des structures** cachées **ou des regroupements n
 
 
 
-## Données d'entraînement, de test, de validation
+## Données d'entraînement, de validation, de test
 
 Après les phases de collecte, de nettoyage et de préparation des données :
 - recherche de correlations entre les variables
