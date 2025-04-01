@@ -245,7 +245,6 @@ Pour un modèle de **Regression** les fonctions de coût usuelles sont :
 
 Pour entrainer un modèle de régression linéaire, il faut trouver le vecteur $\theta$ qui minimise la fonction de coût.
 
-
 #### Entrainement - Méthode analytique
 Calcul les valeurs des paramètres du modèle qui donnent le meilleur résultat sur le jeu d'entrainement
 (qui minimise la fonction de coût)
@@ -253,10 +252,20 @@ Calcul les valeurs des paramètres du modèle qui donnent le meilleur résultat 
 #### Entrainement - Descente de gradient
 ou *Gradient Descent* en anglais<br>
 Optimisation itérative qui modifie graduellement les paramètres du modèle pour minimiser la fonction de coût sur le jeu d'entrainement<br>
-**Converge au final vers le même jeu de paramètres que la méthode analytique**
+**Converge au final vers le même jeu de paramètres que la méthode analytique** ou une approximation du minimum global si le modèle n'est pas convexe.
 
 
-![Ajustement](img/fitting.webp)
+
+### validation
+L'objectif est d'ajuster et d'optimiser le modèle.<br>
+On utilise un jeu de validation distinct du jeu d'entrainement (validation simple) ou la cross validation
+
+- Optimisation des hyperparamètres du modèle pour améliorer ses performances.
+- détecter d'éventuels problèmes
+- Détecter le surajustement : un modèle trop complexe mémorise les données au lieu d'apprendre leurs tendances.
+- Détecter le sous-ajustement : un modèle trop simple passe à côté des structures importantes.
+- Optimiser les performances : tester différentes configurations pour maximiser les résultats.
+- Généralisation : le jeu de validation permet d'estimer comment le modèle se comportera sur des données réelles et non vues auparavant.
 
 #### Surajustement
 <font color="orange">**Overfitting**</font> : le modèle apprend trop bien les détails et le bruit des données d'entraînement, ce qui nuit à sa capacité à généraliser.<br>
@@ -267,6 +276,7 @@ Solutions possible :
 - utiliser plus de données d'apprentissage
 - réduire le bruit des données (supprimer les données abérantes, les erreurs)
 
+
 #### Sous-ajustement
 <font color="orange">**Underfitting**</font> : le modèle est trop simple et ne capte pas la structure sous-jacente des données.<br>
 Solutions possible :
@@ -274,34 +284,33 @@ Solutions possible :
 - Fournir de meilleurs variables à l'algorithme d'apprentissage
 - réduire les contraintes sur le modèle (hyperparamètre de régularisation)
 
-
+![Ajustement](img/fitting.webp)
 
 ### test
-La phase de test consiste à évaluer les performances du modèle sur un ensemble de données qui n'a pas été utilisé pendant l'entraînement.
-Cela permet d'obtenir une estimation objective de la capacité du modèle à généraliser ses prédictions sur des données inconnues.
+La phase de test est l'étape finale, elle consiste à évaluer les performances du modèle sur un jeu de données qui n'a pas été utilisé pendant l'entraînement ou la validation.<br>
+Le jeu de test ne doit jamais être utilisé pour ajuster le modèle. Il sert uniquement à mesurer sa performance finale.
+Cela permet d'obtenir une estimation objective de la capacité du modèle à généraliser ses prédictions sur de nouvelles données.
 
 **Évaluation des performances :**
 On compare les prédictions du modèle avec les valeurs du jeu de test.
 
 **Métriques courantes pour évaluer les performances :**
+**classification**
 - Précision (Accuracy) : proportion de prédictions correctes.
 - Rappel (Recall) : capacité du modèle à identifier les éléments positifs.
 - F1-score : moyenne harmonique entre la précision et le rappel.
-- Erreur quadratique moyenne (MSE) : utilisée pour les modèles de régression.
+**régression**
+- Erreur quadratique moyenne (MSE).
+- RMSE.
+- R² (coefficient de détermination).
 
 **Importance du test :**
 - Identifier les biais et faiblesses du modèle 
 - Vérifier sa capacité à généraliser.
 
-### validation
-Après l'entraînement et le test, la validation permet de s'assurer que le modèle fonctionne correctement dans des conditions réelles.
+Une fois le modèle testé, on ne le modifie plus.
 
-- Optimisation des hyperparamètres du modèle pour améliorer ses performances.
-- détecter d'éventuels problèmes
-- Détecter le surajustement : un modèle trop complexe mémorise les données au lieu d'apprendre leurs tendances.
-- Détecter le sous-ajustement : un modèle trop simple passe à côté des structures importantes.
-- Optimiser les performances : tester différentes configurations pour maximiser les résultats.
-- Généralisation : le jeu de validation permet d'estimer comment le modèle se comportera sur des données réelles et non vues auparavant.
+
 <br>
 
 [Retour à l'index](#recherche-et-documentation)
