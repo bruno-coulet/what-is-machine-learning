@@ -90,6 +90,7 @@ machine learning, la prédiction, la comparaison de modèles et la modélisation
 4. **Analyse prescriptive**
 suite logique et proactive de l'analyse prédictive
 <br>
+
 [Retour à l'index](#recherche-et-documentation)
 <br>
 
@@ -237,7 +238,8 @@ Il permet d'ajuster le modèle choisi aux données dans le but de faire des pré
 
 Entrainer un modèle consiste à définir ses paramètres de telle sorte qu'ils s'ajustent au mieux au jeu d'entrainement
 
-Mesures courantes pour indiquer si un modèle de **Regression** s'ajuste bien ou pas aux donnée d'entrainement ([Fonction de coût](#fonction-de-coût)) :
+La ([Fonction de coût](#fonction-de-coût)) permet de mesurer si le modèle s'ajuste bien aux donnée d'entrainement (ou pas).
+Pour un modèle de **Regression** les fonction de coût courantes sont :
 - **RMSE** racine carrée des erreurs quadratique moyenne -(root mean square error)
 - **MSE** erreur quadratique moyenne - (mean square error)
 
@@ -303,6 +305,7 @@ Elle vise à affiner le modèle et à s'assurer qu'il fonctionne correctement da
 - Optimiser les performances : tester différentes configurations pour maximiser les résultats.
 - Généralisation : le jeu de validation permet d'estimer comment le modèle se comportera sur des données réelles et non vues auparavant.
 <br>
+
 [Retour à l'index](#recherche-et-documentation)
 <br>
 
@@ -448,6 +451,7 @@ Un modèle bien paramétré aura donc une fonction de coût faible et, inverseme
 Elle à donc <font color ="orange">un minimum global</font> , mais <font color ="orange">pas de minimum local</font>
 C'est aussi une fonction continue, sa pente ne varie jamais abruptement.
 <br>
+
 [Retour à l'index](#recherche-et-documentation)
 <br>
 
@@ -558,6 +562,7 @@ Le modèle linéaire effectue une **prédiction `y`** en calculant une somme pon
 Peut aussi s'écrire sous forme [vectorielle ou matricielle](regression_lineaire.md)
 
 <br>
+
 [Retour à l'index](#recherche-et-documentation)
 <br>
 
@@ -791,5 +796,6 @@ A permis des progrès importants et rapides :
 
 Le développement de l'apprentissage profond à été rendu possible par des investissements privés et publics importants, notamment de la part des GAFAM, durant les années 2000.
 <br>
+
 [Retour à l'index](#recherche-et-documentation)
 <br>
