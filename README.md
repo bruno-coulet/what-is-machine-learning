@@ -261,17 +261,17 @@ Optimisation itérative qui modifie graduellement les paramètres du modèle pou
 #### Surajustement
 <font color="orange">**Overfitting**</font> : le modèle apprend trop bien les détails et le bruit des données d'entraînement, ce qui nuit à sa capacité à généraliser.<br>
 Solutions possible :
-- simpliifier le modèle, moins deparamètres
+- simplifier le modèle, moins de paramètres
 - réduire le nombre d'attributs des données d"entrainement
 - imposer des contraintes au modèle avec un hyperparamètre (**régularisation**)
 - utiliser plus de données d'apprentissage
-- réduire le bruit des données (suupprimer les données abérantes, les erreurs)
+- réduire le bruit des données (supprimer les données abérantes, les erreurs)
 
 #### Sous-ajustement
 <font color="orange">**Underfitting**</font> : le modèle est trop simple et ne capte pas la structure sous-jacente des données.<br>
 Solutions possible :
-- Choisir un modèle plus puissant, avec plus dde paramètres
-- Fournir dde meilleurs variables à l'algorithme d'apprentissage
+- Choisir un modèle plus puissant, avec plus de paramètres
+- Fournir de meilleurs variables à l'algorithme d'apprentissage
 - réduire les contraintes sur le modèle (hyperparamètre de régularisation)
 
 
