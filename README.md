@@ -122,7 +122,7 @@ Ce modèle est ensuite utilisé pour les prédictions
 
 ## Apprentissage supervisé
 Les données d'entrainement fournies à l'algorithme comportent des **étiquettes** qui indiquent le résultat voulu.
-Les données sont caractérisé par des variable x (**features**), et annoté d'une variable y (**label/target**)
+Les données sont caractérisé par des variables X (**features**), et annoté d'une variable y (**label/target**)
 <p align="center">
   <img src="img/etiquette.png" alt="étiquette">
 </p>
