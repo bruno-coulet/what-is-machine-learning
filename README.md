@@ -13,7 +13,7 @@
 8. [Validation croisée](#validation-croisée)
 9. [Corrélation linéaire (de pearson) entre deux variables](#corrélation-linéaire-de-pearson-entre-deux-variables)
 10. [Fonction de coût](#fonction-de-coût)
-11. [Régression](#regression)
+11. [Régression](#regression-lineaire)
 12. [Descente de gradient](#descente-de-gradient)
 13. [Apprentissage profond](#apprentissage-profond)
 
@@ -525,7 +525,7 @@ En mathématiques, la régression recouvre plusieurs méthodes d’analyse stati
 |**Corrélation entre variables explicatives** | Régression PLS, Ridge|  
 
 
-#### Régression linéaire(#regression-lineaire)
+#### Régression linéaire
 
 [notebook regression_lineaire](regression.ipynb)
 
