@@ -138,11 +138,11 @@ pour inclure le biais $\theta_0$ dans la somme.
 
 On introduit le vecteur colonne des variables d'entrée, avec $𝑥0=1$:
 
-- $𝑋=\begin{pmatrix} x_0 \\ x_1 \\ \vdots \\ x_n \end{pmatrix}$
+$𝑋=\begin{pmatrix} x_0 \\ x_1 \\ \vdots \\ x_n \end{pmatrix}$
 
 Et le vecteur colonne des paramètres du modèle :
 
-- $\theta=\begin{pmatrix} \theta_0 \\ \theta_1 \\ \vdots \\ \theta_n \end{pmatrix}$
+$\theta=\begin{pmatrix} \theta_0 \\ \theta_1 \\ \vdots \\ \theta_n \end{pmatrix}$
 
 
 Le produit scalaire entre ces deux vecteurs donne :
