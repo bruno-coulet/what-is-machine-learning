@@ -25,20 +25,12 @@ En algèbre linéaire, par convention, un vecteur est généralement considéré
 
 
 Matrice $\boldsymbol{X}$, constituée de m vecteurs colonnes, chacun transposé en vecteur ligne
-$$
+![vecteur colonne](img/matrice.svg)
+<!-- $$
 X = 
 \begin{pmatrix} (\boldsymbol{x}^1)^T \\ (\boldsymbol{x}^2)^T \\ (\boldsymbol{x}^{...})^T \\ (\boldsymbol{x}^{m})^T \end{pmatrix} =  
 \begin{pmatrix} -11 & 45 & 62 & 13 \\ \cdot & \cdot & \cdot & \cdot \\ \cdot & \cdot & \cdot & \cdot \\ \cdot & \cdot & \cdot & \cdot  \end{pmatrix}
-$$
-
-
-
-
-
-
-
-
-
+$$-->
 
 ### Mean Square Residuals - Résidu Quadratique Moyen
 $$
