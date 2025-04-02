@@ -123,9 +123,7 @@ $$
 
 Pour calculer
 **Vecteur Gradient du MSE**
-$$
-\nabla_\theta MSE = \frac{2}{m} X^T (X\theta - y)
-$$
+$\nabla_\theta MSE = \frac{2}{m} X^T (X\theta - y)$
 
 
 
