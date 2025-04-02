@@ -145,7 +145,8 @@ On introduit le vecteur colonne des variables d'entrée, avec $𝑥0=1$:
 
 Et le vecteur colonne des paramètres du modèle :
 
-$\theta=\begin{pmatrix} \theta_0 \\ \theta_1 \\ \vdots \\ \theta_n \end{pmatrix}$
+<!--$\theta=\begin{pmatrix} \theta_0 \\ \theta_1 \\ \vdots \\ \theta_n \end{pmatrix}$-->
+![vecteru paramètres](img/vecteur_parametres.png)
 
 
 Le produit scalaire entre ces deux vecteurs donne :
