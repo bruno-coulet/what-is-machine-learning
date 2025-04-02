@@ -11,8 +11,8 @@
 |symbole|signification|
 |:--:|:--------|
 |m|Nombre d'observation du jeu de donnée|
-|$oldsymbol{x}^i$|Vecteur  constitué des valeurs de des variables (hors étiquette) pour la ième observation|
-|$boldsymbol{X}$ |Matrice contenant toutes les valeurs des toutes les variable (hors étiquette) du jeu de donnée|
+|$xi$|Vecteur  constitué des valeurs de des variables (hors étiquette) pour la ième observation|
+|$X$ |Matrice contenant toutes les valeurs des toutes les variable (hors étiquette) du jeu de donnée|
 |h|Hypothèse, fonction de prédiction|
 |$\hat{y}$|y chapeau, valeur prédite, retournée par $h(x^i)$|
 |T|Transposée|
@@ -21,7 +21,7 @@
 En algèbre linéaire, par convention, un vecteur est généralement considéré comme un vecteur colonne.
 |$\textbf{Vecteur } \boldsymbol{x}^i$|$\textbf{Transposée } (\boldsymbol{x}^i)^T$|
 |:--:|:--------|
-|$\boldsymbol{x}^i =\begin{pmatrix} -11 \\ 45 \\ 62 \\ 13 \end{pmatrix}$|$(\boldsymbol{x}^i)^T =\begin{pmatrix} -11 & 45 & 62 & 13 \end{pmatrix}$|
+|$x^i =\begin{pmatrix} -11 \\ 45 \\ 62 \\ 13 \end{pmatrix}$|$(x^i)^T =\begin{pmatrix} -11 & 45 & 62 & 13 \end{pmatrix}$|
 
 
 Matrice $\boldsymbol{X}$, constituée de m vecteurs colonnes, chacun transposé en vecteur ligne
