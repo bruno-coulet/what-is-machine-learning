@@ -166,13 +166,13 @@ $$
 ---
 
 ### coefficient de Pearson
-​$$ r = \frac{\sum (x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum (x_i - \bar{x})^2 \sum (y_i - \bar{y})^2}} $$
+​$$r = \frac{\sum (x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum (x_i - \bar{x})^2 \sum (y_i - \bar{y})^2}}$$
 
 
 - **r** : le coefficient de corrélation linéaire de Pearson  
-- **$ x_i $** et **$ y_i $** : les valeurs des deux variables étudiées  
-- **$ \bar{x} $** et **$ \bar{y} $** : les moyennes des variables $ x $et $ y $ 
-- Le numérateur mesure la covariance entre $ x $et $ y $ 
+- **$x_i$** et **$y_i$** : les valeurs des deux variables étudiées  
+- **$ \bar{x} $** et **$ \bar{y} $** : les moyennes des variables $x$ et $y$ 
+- Le numérateur mesure la covariance entre $x$et $y$ 
 - Le dénominateur normalise cette covariance par le produit des écarts-types des deux variables  
 <br>
 [Retour à l'index](#index)
