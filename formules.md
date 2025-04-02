@@ -22,7 +22,7 @@ En algèbre linéaire, par convention, un vecteur est généralement considéré
 |$\textbf{Vecteur } \boldsymbol{x}^i$|$\textbf{Transposée } (\boldsymbol{x}^i)^T$|
 |:--:|:--------|
 |$x^i =\begin{pmatrix} -11 \\ 45 \\ 62 \\ 13 \end{pmatrix}$|$(x^i)^T =\begin{pmatrix} -11 & 45 & 62 & 13 \end{pmatrix}$|
-|![vecteru colonne ttransposé](img/vecteur_colonne_transpose.svg)||
+|![vecteur colonne](img/vecteur_colonne.svg)|![vecterur transposé](img/vecteur_transpose.svg)|
 
 
 Matrice $\boldsymbol{X}$, constituée de m vecteurs colonnes, chacun transposé en vecteur ligne
