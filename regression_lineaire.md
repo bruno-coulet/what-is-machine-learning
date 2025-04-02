@@ -74,7 +74,7 @@ $$ \hat{\theta} = (X^T X)^{-1} X^T y $$
 
 | Symbole                            | signification |
 |----------------------------------------|---------|
-| $\hat{\theta}$ | valeur du vecteur$\theta$ qui minimise la fonction de coût |
+| $\hat{\theta}$ | valeur du vecteur $\theta$ qui minimise la fonction de coût |
 | $y$ | vecteur des valeurs cible $y^{(1)}$ à $y^{(m)}$ |
 
 | Description                            | Formule |
