@@ -58,7 +58,7 @@ $$
 |$𝜃$ | vecteur des paramètres du modèle.|
 |$𝜃𝑇𝑥(𝑖)$ <font color = "orange">ou</font> $h (x^{(i)})$ | prédiction du modèle pour $𝑥(𝑖)$|
 |$y(i)$|valeur réelle associée à $𝑥_i$|
-|$ (\theta^T x^{(i)} - y^{(i)})^2 $|erreur quadratique pour un exemple donné|
+|$(\theta^T x^{(i)} - y^{(i)})^2$|erreur quadratique pour un exemple donné|
 
 <font color = "orange">Le MSE pénalise les grandes erreurs plus fortement que les petites erreurs, ce qui le rend sensible aux valeurs aberrantes (outliers).</font>
 
