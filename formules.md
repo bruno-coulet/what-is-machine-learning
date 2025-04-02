@@ -154,14 +154,14 @@ $$
 
 | Symbole                    | Signification |
 |----------------------------|--------------|
-| $ \nabla_\theta MSE $      | Gradient du MSE (vecteur des dérivées partielles) |
-| $ X $                      | Matrice des caractéristiques de taille $ m \times n $ |
-| $ y $                      | Vecteur des valeurs réelles de taille $ m \times 1 $ |
-| $ \theta $                 | Vecteur des paramètres du modèle de taille $ n \times 1 $ |
-| $ X\theta $                | Prédictions du modèle (produit matriciel) de taille $ m \times 1 $ |
-| $ X^T $                    | Transposée de la matrice $ X $, de taille $ n \times m $ |
-| $ X^T (X\theta - y) $      | Gradient du MSE avant multiplication par $ \frac{2}{m} $ |
-| $ \alpha $                 | Taux d'apprentissage (learning rate) |
+| $\nabla_\theta MSE$      | Gradient du MSE (vecteur des dérivées partielles) |
+| $X$                      | Matrice des caractéristiques de taille $ m \times n $ |
+| $y$                      | Vecteur des valeurs réelles de taille $ m \times 1 $ |
+| $\theta$                 | Vecteur des paramètres du modèle de taille $ n \times 1 $ |
+| $X\theta$                | Prédictions du modèle (produit matriciel) de taille $ m \times 1 $ |
+| $X^T$                    | Transposée de la matrice $ X $, de taille $ n \times m $ |
+| $X^T (X\theta - y)$      | Gradient du MSE avant multiplication par $ \frac{2}{m} $ |
+| $\alpha$                 | Taux d'apprentissage (learning rate) |
 
 ---
 
