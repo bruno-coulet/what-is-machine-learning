@@ -138,7 +138,10 @@ pour inclure le biais $\theta_0$ dans la somme.
 
 On introduit le vecteur colonne des variables d'entrée, avec $𝑥0=1$:
 
-$𝑋=\begin{pmatrix} x_0 \\ x_1 \\ \vdots \\ x_n \end{pmatrix}$
+<!--$𝑋=\begin{pmatrix} x_0 \\ x_1 \\ \vdots \\ x_n \end{pmatrix}$-->
+
+![entrée X](img/vecteur_colonne_entree.png)
+
 
 Et le vecteur colonne des paramètres du modèle :
 
