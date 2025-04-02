@@ -144,7 +144,10 @@ $$
 ---
 
 ### coefficient de Pearson
-​$r = \frac{\sum (x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum (x_i - \bar{x})^2 \sum (y_i - \bar{y})^2}}$
+
+​<!--$$r = \frac{\sum (x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum (x_i - \bar{x})^2 \sum (y_i - \bar{y})^2}}$$-->
+
+![Coefficient de Pearson](img/pearson.png)
 
 
 - **r** : le coefficient de corrélation linéaire de Pearson  
