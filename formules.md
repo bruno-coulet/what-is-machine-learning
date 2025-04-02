@@ -100,7 +100,7 @@ $$J(\theta) = \frac{1}{m} \sum_{i=1}^{m} \left( h_\theta(x^{(i)}) - y^{(i)} \rig
 |$𝜃$ | vecteur des paramètres du modèle.|
 |$𝜃𝑇𝑥(𝑖)$ <font color = "orange">ou</font> $h (x^{(i)})$ | prédiction du modèle pour $𝑥(𝑖)$|
 |$y(i)$|valeur réelle associée à $𝑥_i$|
-|$ (\theta^T x^{(i)} - y^{(i)})^2 $|erreur quadratique pour un exemple donné|
+|$(\theta^T x^{(i)} - y^{(i)})^2$|erreur quadratique pour un exemple donné|
 
 ---
 ## Dérivée partielle par rapport à un paramètre $\theta_j$
