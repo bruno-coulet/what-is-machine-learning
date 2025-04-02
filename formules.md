@@ -59,10 +59,12 @@ Voir la [fonction de coût](#regression-lineaire.md) du modèle de regression li
 
 Peut s'écrire de plusieurs manières :<br>
 $MSE(X, h_\theta)$, pour montrer que le modèle est paramétré par le vecteur $\theta$<br>$MSE(X, h)$<br>
-$MSE(\theta)$ pour simplifier
-$$
+$MSE(\theta)$ pour simplifier :<br>
+
+![MSE](img/MSE.png)
+<!--$$
 MSE(X, h_\theta) = \frac{1}{m} \sum_{i=1}^{m} \left( \theta^T x^{(i)} - y^{(i)} \right)^2
-$$
+$$-->
 
 S'écrit aussi
 
