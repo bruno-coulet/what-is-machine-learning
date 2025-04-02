@@ -25,7 +25,7 @@ En algèbre linéaire, par convention, un vecteur est généralement considéré
 
 
 Matrice $\boldsymbol{X}$, constituée de m vecteurs colonnes, chacun transposé en vecteur ligne
-![vecteur colonne](img/matrice.svg)
+![vecteur colonne](img/matrice.png)
 <!-- $$
 X = 
 \begin{pmatrix} (\boldsymbol{x}^1)^T \\ (\boldsymbol{x}^2)^T \\ (\boldsymbol{x}^{...})^T \\ (\boldsymbol{x}^{m})^T \end{pmatrix} =  
