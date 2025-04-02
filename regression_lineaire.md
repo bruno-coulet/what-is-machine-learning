@@ -74,14 +74,14 @@ $$ \hat{\theta} = (X^T X)^{-1} X^T y $$
 
 | Symbole                            | signification |
 |----------------------------------------|---------|
-| $ \hat{\theta}$ | valeur du vecteur $\theta$ qui minimise la fonction de coût |
-| $ y$ | vecteur des valeurs cible $y^{(1)}$ à $y^{(m)}$ |
+| $\hat{\theta}$ | valeur du vecteur$\theta$ qui minimise la fonction de coût |
+| $y$ | vecteur des valeurs cible $y^{(1)}$ à $y^{(m)}$ |
 
 | Description                            | Formule |
 |----------------------------------------|---------|
-| **Fonction de coût MSE** pour la régression linéaire | $\displaystyle MSE(X, h_\theta) = \frac{1}{m} \sum_{i=1}^{m} \left( \theta^T x^{(i)} - y^{(i)} \right)^2 $ |
-| **Fonction de coût RMSE** (Racine de MSE) | $\displaystyle RMSE(X, h_\theta) = \sqrt{\frac{1}{m} \sum_{i=1}^{m} \left( \theta^T x^{(i)} - y^{(i)} \right)^2} $ |
-| **Équation normale** pour $\hat{\theta}$ | $ \hat{\theta} = (X^T X)^{-1} X^T y $ |
+| **Fonction de coût MSE** pour la régression linéaire | $\displaystyle MSE(X, h_\theta) = \frac{1}{m} \sum_{i=1}^{m} \left( \theta^T x^{(i)} - y^{(i)} \right)^2$ |
+| **Fonction de coût RMSE** (Racine de MSE) | $\displaystyle RMSE(X, h_\theta) = \sqrt{\frac{1}{m} \sum_{i=1}^{m} \left( \theta^T x^{(i)} - y^{(i)} \right)^2}$ |
+| **Équation normale** pour $\hat{\theta}$ | $\hat{\theta} = (X^T X)^{-1} X^T y$ |
 
 
 ### Entrainement - Méthode analytique
