@@ -449,6 +449,21 @@ C'est aussi une fonction continue, sa pente ne varie jamais abruptement.
 <br>
 
 
+## Coefficient de détermination $(𝑅^2)$
+Métrique d’évaluation utilisée en régression pour **mesurer la qualité du modèle**.
+
+
+$$\boxed{R^2 = 1− \dfrac{ \text{ss residuel}}{ \text{ss total}}}$$
+
+$\text{𝑆𝑆 résiduel}$  : somme des carrés des erreurs de prédiction
+$\text{𝑆𝑆 total}$ : somme des carrés des écarts à la moyenne
+
+|Valeur de $𝑅^2$|Signification|
+|-|-|
+|1|	Prédiction parfaite|
+|0	|Le modèle ne fait pas mieux que la moyenne|
+|< 0|Le modèle est pire qu'une prédiction aléatoire|
+
 ## Régression
 
 En mathématiques, la régression recouvre plusieurs méthodes d’analyse statistique permettant d’approcher une variable à partir d’autres qui lui sont corrélées.
