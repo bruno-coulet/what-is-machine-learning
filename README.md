@@ -245,10 +245,10 @@ Connaitre l'erreur de généralisation des différents modèles précedement ent
 ```python
 from sklearn.model_selection import train_test_split
 
-# Étape 1 : Sépare le jeu en train-validation et test
+# Étape 1 : Sépare le jeu en trainValidation et test
 X_trainValidation, X_test, y_trainValidation, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
-# Étape 2 : Sépare le jeu en train et val à partir de X_train-validation
+# Étape 2 : Sépare le jeu en train et val à partir de X_trainValidation
 X_train, X_val, y_train, y_val = train_test_split(X_trainValidation, y_trainValidation, test_size=0.25, random_state=42)  # 0.25 x 0.8 = 0.2
 
 ```
