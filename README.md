@@ -235,7 +235,7 @@ supervisé ou non supervisé selon que les données contiennent ou non des étiq
 Il permet d'ajuster le modèle choisi aux données dans le but de faire des prédictions ou de la classification sur de nouvelles données
 
 Il faut séparer les données :
-1. <font color ="orange">Jeu d'entrainement</font><br> pour ajuster le modèle aux données. Essayer d'avoir l'erreur d'apprentissage la plus faible possible en comparant plusieurs modèles avec différent hyperparamètrees
+1. <font color ="orange">Jeu d'entrainement</font><br> pour ajuster le modèle aux données. Essayer d'avoir l'erreur d'apprentissage la plus faible possible en comparant plusieurs modèles avec différents hyperparamètres
 
 2. <font color ="orange">Jeu de validation</font><br> pour évaluer les performances du modèle entrainé.
 Connaitre l'erreur de généralisation des différents modèles précedement entrainés
