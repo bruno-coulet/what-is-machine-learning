@@ -45,7 +45,10 @@
 |**attribut**| type de donnée ( ex : *kilométrage* )|
 |**caractéristique**<br><font color="orange">Feature</font><br> **variable explicative**| un attribut **et** sa valeur ( ex : *kilométrage = 58 000 km )*|
 |**variable à expliquer**<br><font color="orange">Target</font>| étiquette|
-|**variable qualitative**|Aussi appelé **variable catégorielle**<br>Ne peut prendre qu'un nombre fini de valeurs, appelées **modalitées**<br>|
+|**variable qualitative**|Aussi appelé **variable catégorielle**<br>Ne peut prendre qu'un nombre fini de valeurs, appelées **modalitées**<br>
+>>> pd.Categorical(['a', 'b', 'c', 'a', 'b', 'c'])<br>
+['a', 'b', 'c', 'a', 'b', 'c']<br>
+Categories (3, object): ['a', 'b', 'c']|
 |**intercept** <br> **$\theta_0 $** <br> **terme constant**|dans une équation de régression linéaire <br> valeur de la variable à expliquer lorsque toutes les variables explicatives sont égales à zéro. <br> Point d'intersection avec l'axe des ordonnées.|
 |**biais**| synonyme d'intercept dans les modèles de régression.<br> Représente l'ajustement constant nécessaire pour mieux prédire la variable à expliquer, indépendamment des variables explicatives.<br> Dans un modèle d'apprentissage automatique, c'est la valeur qui est ajoutée avant d'appliquer les coefficients aux variables explicatives.|
 |**hyperparamètre**|paramètre de l'algorithme d'apprentissage (et non du modèle)<br>Permet de contrôler le niveau de **régularisation** durant l'apprentissage (il doit être défini avant, et rester constant)|
