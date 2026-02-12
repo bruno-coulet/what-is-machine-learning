@@ -96,9 +96,7 @@ suite logique et proactive de l'analyse prédictive
 
 ## Apprentissage automatique
 L'art de programmer des ordinateurs de sorte qu'ils puissent apprendre à partir de données
-
 On considère qu'un ordinateur "apprend" s'il améliore sa **[performance](#fonction-de-coût)** lors de l'exécution d'une **tâche** au fur et à mesure de son **expérience**.
-
 
 
 ### Il existe 2 grandes familles d'apprentissage automatique :
@@ -116,10 +114,10 @@ On considère qu'un ordinateur "apprend" s'il améliore sa **[performance](#fonc
 </ul>
 
 ### Mode de généralisation
-On peut aussi catégoriser les système de machine learning selon leur mode de généralisation :<br>
+On peut aussi catégoriser les systèmes de machine learning selon leur mode de généralisation :<br>
 <ul>
    <li>
-   <font color="orange">Apprentissage à partir d'observation</font> - <strong>Instance based learning</strong>strong><br>
+   <font color="orange">Apprentissage à partir d'observation</font> - <strong>Instance based learning</strong><br>
    Le système généralise à de nouveaux cas en utilisant une mesure de similarité<br>
    </li>
    <li>
