@@ -119,7 +119,7 @@ On considère qu'un ordinateur "apprend" s'il améliore sa **[performance](#fonc
 On peut aussi catégoriser les système de machine learning selon leur mode de généralisation :<br>
 <ul>
    <li>
-   <font color="orange">Apprentissage à partir d'observation</font> - **Instance based learning**<br>
+   <font color="orange">Apprentissage à partir d'observation</font> - <strong>Instance based learning</strong>strong><br>
    Le système généralise à de nouveaux cas en utilisant une mesure de similarité<br>
    </li>
    <li>
