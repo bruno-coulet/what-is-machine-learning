@@ -114,13 +114,17 @@ Prédit une valeur numérique **cible (target)** à partir des valeurs **caract�
 
 ### Mode de généralisation
 On peut aussi catégoriser les système de machine learning selon leur mode de généralisation :<br>
-<font color="orange">Apprentissage à partir d'observation</font> - **Instance based learning**<br>
-Le système généralise à de nouveaux cas en utilisant une mesure de similarité<br>
-
-<font color="orange">Apprentissage à partir d'un modèle</font> <br>
-Construit un modèle à partir des exemples.<br>
-Ce modèle est ensuite utilisé pour les prédictions<br>
-
+<ul>
+   <li>
+   <font color="orange">Apprentissage à partir d'observation</font> - **Instance based learning**<br>
+   Le système généralise à de nouveaux cas en utilisant une mesure de similarité<br>
+   </li>
+   <li>
+   <font color="orange">Apprentissage à partir d'un modèle</font> <br>
+   Construit un modèle à partir des exemples.<br>
+   Ce modèle est ensuite utilisé pour les prédictions<br>
+   </li>
+</ul>
 
 ## Apprentissage supervisé
 Les données d'entrainement fournies à l'algorithme comportent des **étiquettes** qui indiquent le résultat voulu.
