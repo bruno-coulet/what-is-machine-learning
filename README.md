@@ -104,13 +104,13 @@ On considère qu'un ordinateur "apprend" s'il améliore sa **[performance](#fonc
 ### Il existe 2 grandes familles d'apprentissage automatique :
 <ul>
    <li>
-   <font color="orange">La classification</font> - prédire des classes
-   Prédire une catégorie ou une étiquette à partir des caractéristiques des données d'entrée.
-   exemple : filtre de spam à partir d'e-mail accompagnés de leur classe (normal/spam) 
+      <font color="orange">La classification</font><br>
+      Prédire des classes, une catégorie ou une étiquette à partir des caractéristiques des données d'entrée<br>
+      exemple : filtre de spam à partir d'e-mail accompagnés de leur classe (normal/spam) 
    </li>
    <li>
-      <font color="orange">La régression</font> - prédire des valeurs
-      Prédit une valeur numérique <strong>cible (target)</strong> à partir des valeurs <strong>caractéristiques (feature)</strong> d'attributs ou de variables d'une observation
+      <font color="orange">La régression</font></strong>
+      Prédire une valeur numérique <strong>cible (target)</strong> à partir des valeurs <strong>caractéristiques (feature)</strong> d'attributs ou de variables d'une observation<br>
       exemple : prédire le prix d'une voiture en fonction de son age, de son kilométrage, etc...
    </li>
 </ul>
